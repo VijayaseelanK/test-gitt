@@ -1,0 +1,22 @@
+{
+	"contentrating" : "Everyone",
+	"file" : "İsimsiz video ‐ Clipchamp ile yapıldı (3).mp4",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0.94902 0.93333 0.90980"
+			}
+		}
+	},
+	"preview" : "preview.gif",
+	"tags" : [ "Vehicle" ],
+	"title" : "Rolls Royce Ghost",
+	"type" : "video",
+	"version" : 0
+}
