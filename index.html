@@ -1,201 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Kanikathir Vijayaseelan</title>
+    <title>Portfolio</title>
     <style>
-        /* Fond en dégradé animé */
-        body {
-            background: linear-gradient(-45deg, #74ebd5, #ACB6E5, #f3e5ab, #f093fb);
-            background-size: 400% 400%;
-            animation: gradientShift 10s ease infinite;
-            font-family: 'Arial', sans-serif;
-            color: #333;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Animation du fond pour le mouvement */
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* Titre principal avec effet de zoom */
-        h1 {
-            font-size: 3em;
-            color: #fff;
-            margin: 40px 0;
-            animation: zoomIn 3s ease-in-out;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Animation pour le titre */
-        @keyframes zoomIn {
-            0% {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        /* Sous-titre avec effet de rebond */
-        h2 {
-            font-size: 2.5em;
-            color: #444;
-            margin-top: 30px;
-            animation: bounceIn 2s ease-in-out;
-        }
-
-        @keyframes bounceIn {
-            0% {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            60% {
-                transform: translateY(20px);
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Liste des liens avec effet de montée */
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 30px;
-            animation: listFadeIn 2s ease-in-out forwards;
-            opacity: 0;
-        }
-
-        li {
-            margin: 20px 0;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes listFadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Style des liens avec ombrage et effet 3D */
-        a {
-            text-decoration: none;
-            color: #fff;
-            background-color: #333;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1.3em;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        body {
+            font-family: Arial, sans-serif;
+            color: #000;
             position: relative;
             overflow: hidden;
         }
 
-        /* Effet de survol avec éclairage */
-        a:hover {
-            background-color: #555;
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        /* Fond de la vidéo */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
-        /* Animation d'éclat pour le lien au survol */
-        a::before {
-            content: '';
+        /* Style de l'en-tête avec effet néon */
+        .header {
+            text-align: right;
+            padding: 20px;
+            font-size: 32px; /* Taille du texte augmentée pour plus d'impact */
+            font-weight: bold;
+            color: #000000;
+            text-shadow: 
+                0 0 5px #ffffff, 
+                0 0 10px #ffffff, 
+                0 0 15px #00ffea, 
+                0 0 20px #00ffea, 
+                0 0 25px #00ffea, 
+                0 0 30px #00ffea; /* Effet de néon bleu */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #000; 
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: #ffffff; 
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #333; 
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
             position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(45deg);
-            transition: all 0.7s ease-in-out;
+            background-color: #00e1ff; 
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgb(255, 238, 0);
+            z-index: 1;
         }
 
-        a:hover::before {
-            top: -30%;
-            left: -30%;
+        .dropdown-content a {
+            color: #333; 
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
         }
 
-        /* Barre horizontale animée */
-        hr {
-            border: 0;
-            height: 4px;
-            background: #fff;
-            width: 80%;
-            margin: 30px auto;
-            animation: expandLine 1.5s ease-in-out;
+        .dropdown-content a:hover {
+            background-color: #00ff62; 
         }
 
-        @keyframes expandLine {
-            from {
-                width: 0;
-            }
-            to {
-                width: 80%;
-            }
-        }
-
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.8em;
-            }
-
-            a {
-                font-size: 1.2em;
-                padding: 10px 20px;
-            }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
-
 <body>
-    <h1>Kanikathir Vijayaseelan</h1>
-    <hr>
-    <h2>Sommaire</h2>
-    <ul>
-        <li><a href="TP1/indexx.html">TP1</a></li>
-        <li><a href="AP1/Mission 1/Présentationsdesmétiers.html">Mission 1</a></li>
-        <li><a href="TP2/sommaire.html">TP2 Non noté</a></li>
-        <li><a href="AP1/Mission 2/Mission2.html">Mission 2</a></li>
-        <li><a href="/AP1/Mission 3/Mission3.html">mission3</a></li>
-    </ul>
-</body>
+    <!-- Vidéo de fond -->
+    <video autoplay muted loop class="video-background">
+        <source src="İsimsiz video ‐ Clipchamp ile yapıldı (3).mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
 
+    <div class="header">PORTFOLIO DE KANIKATHIR</div>
+
+    <div class="navbar">
+        <div class="dropdown">
+            <a href="#" class="dropbtn">HTML et CSS</a>
+            <div class="dropdown-content">
+                <a href="../../TP1/page.html">TP1</a>
+                <a href="../../TP2/index.html">TP2</a>
+                <a href="../../TP3/formulaire.html">TP3</a>
+                <a href="../../TP4/index.html">TP4</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Javascript</a>
+            <div class="dropdown-content">
+                <a href="../../TP5/index.html">TP1</a>
+                <a href="../../TP_JS2/index.html">TP2</a>
+                <a href="#">Projet Final</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Base de Donnée</a>
+            <div class="dropdown-content">
+                <a href="./ORANGE TD (1).pdf">TP1</a>
+                <a href="#">TP2</a>
+                <a href="../Mission 6/Procédure_TP3_BDD.pdf">TP3</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Le PHP</a>
+            <div class="dropdown-content">
+                <a href="#">TP1</a>
+                <a href="#">TP2</a>
+                <a href="#">Projet Final</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Missions</a>
+            <div class="dropdown-content">
+                <a href="../Mission 1/Présentationsdesmétiers.html">Mission 1</a>
+                <a href="../Mission 2/nav.html">Mission 2</a>
+                <a href="../Mission 3/Mission3.html">Mission 3</a>
+                <a href="../Mission 4/Sommaire.html">Mission 4</a>
+                <a href="../Mission 5/index.html">Mission 5</a>
+                <a href="../Mission 6/index.html">Mission 6</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Certification</a>
+            <div class="dropdown-content">
+                <a href="../../Attestation_de_suivi.pdf">Certification 1</a>
+                <a href="../../3.pdf">Certification 2</a>
+                <a href="../../4.pdf">Certification 3</a>
+                <a href="../..//Certificat_.pdf">Certification 4</a>
+                <a href="../../5.pdf">Certification 5</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Contenu de la page ici -->
+    </div>
+</body>
 </html>
 
