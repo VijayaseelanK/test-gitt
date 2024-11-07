@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Métiers de l'informatique</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff3300, #0044cc);
+            background-size: 400% 400%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            animation: gradientAnimation 10s ease infinite, fadeInBody 1.5s ease-in;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInElement {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            background-color: rgba(255, 51, 0, 0.9);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            animation: fadeInElement 2s ease-out;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 2s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        nav {
+            background-color: #333;
+            padding: 20px;
+            animation: fadeInElement 2.5s ease-out;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
+            animation: fadeInElement 2s ease-out forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        nav ul li:nth-child(1) { animation-delay: 0.5s; }
+        nav ul li:nth-child(2) { animation-delay: 0.7s; }
+        nav ul li:nth-child(3) { animation-delay: 0.9s; }
+        nav ul li:nth-child(4) { animation-delay: 1.1s; }
+        nav ul li:nth-child(5) { animation-delay: 1.3s; }
+        nav ul li:nth-child(6) { animation-delay: 1.5s; }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #4CAF50;
+            transform: rotate(-3deg) scale(1.1);
+            color: #fff;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            animation: fadeInElement 3s ease-out;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .developer {
+            font-size: 0.9em;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Métiers de l'informatique</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="metier1.html">Développeur Front-End</a></li>
+            <li><a href="metier2.html">Développeur Back-End</a></li>
+            <li><a href="metier3.html">Développeur Data Scientist</a></li>
+            <li><a href="metier4.html">Data Full-Stack</a></li>
+            <li><a href="établissement.html">Établissement</a></li>
+            <li><a href="../../index.html">Retour au Sommaire</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        <p>&copy; 2024 ONISEP - Tous droits réservés.</p>
+        <p class="developer">Développé par Vijayaseelan Kanikathir</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+

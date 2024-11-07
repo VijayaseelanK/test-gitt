@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(-45deg, #74ebd5, #ACB6E5, #f3e5ab, #f093fb);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            margin: 40px 0;
+            animation: zoomIn 3s ease-in-out;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-top: 30px;
+            animation: bounceIn 2s ease-in-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            60% {
+                transform: translateY(20px);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 30px;
+            animation: listFadeIn 2s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        li {
+            margin: 20px 0;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes listFadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            box-shadow: 0 8px 15px rgb(245, 243, 243);
+            position: relative;
+            overflow: hidden;
+        }
+
+        a:hover {
+            background-color: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Animation d'éclat pour le lien au survol */
+        a::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: rgb(255, 0, 0);
+            transform: rotate(45deg);
+            transition: all 0.7s ease-in-out;
+        }
+
+        a:hover::before {
+            top: -30%;
+            left: -30%;
+        }
+
+        hr {
+            border: 0;
+            height: 4px;
+            background: #fff;
+            width: 80%;
+            margin: 30px auto;
+            animation: expandLine 1.5s ease-in-out;
+        }
+
+        @keyframes expandLine {
+            from {
+                width: 0;
+            }
+            to {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            a {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+        }
+
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 80%;
+            box-shadow: 0 8px 15px #ff0000;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+
+    </style>
+</head>
+<body>
+
+</body>
+    <table>
+        <tr>
+        <td>
+    <h1>Formulaire d'inscription</h1>
+    <form action="#" method="post">
+        <label for="pseudo">Pseudo</label>
+        <input type="text" id="pseudo" name="pseudo"
+placeholder="Votre Pseudo" required><br><br>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password"
+placeholder="Votre Mot de Passe"><br><br>
+
+        <label for="prenom">Prenom</label>
+        <input type="text" id="prenom" name="prenom"
+placeholder="Votre Prenom"><br><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Votre
+Email"><br><br>
+
+        <label for="avatar">Avatar</label>
+        <input type="file" id="avatar" name="avatar"><br><br>
+
+        <label for="pays">Pays</label>
+        <select id="pays" name="pays">
+            <option value="france">France</option>
+            <option value="espagne">Espagne</option>
+            <option value="italie">Italie</option>
+            <option value="Inde">Japon</option>
+            <option value="sri lanka">Sri Lanka</option>
+            <option value="suisse">Suisse</option>
+            <option value="allemagne">Allemagne</option>
+            <option value="Angleterre">Angleterre</option>
+        </select><br><br>
+
+        <label>Quel sont vos fruits préférés ?</label><br>
+        <input type="checkbox" id="orange" name="fruits" value="orange">
+        <label for="orange">Orange</label>
+        <input type="checkbox" id="banane" name="fruits" value="banane">
+        <label for="banane">Banane</label>
+        <input type="checkbox" id="peche" name="peche" value="peche">
+        <label for="raisin">Raisin</label><br><br>
+
+        <label>Quel sont vos animés préférés ?</label><br>
+        <input type="checkbox" id="dragon ball z" name="animes"
+value="dragon ball z">
+        <label for="dragon ball z">Eyeshield21</label>
+        <input type="checkbox" id="attaque des titans" name="animes"
+value="attaque des titans">
+        <label for="attaque des titans">Blue Lock</label>
+        <input type="checkbox" id="haikyuu" name="animes" value="haikyuu">
+        <label for="haikyuu">Naruto</label><br><br>
+
+        <label>Civilité</label><br>
+        <input type="radio" id="homme" name="civilite" value="homme">
+        <label for="homme">Homme</label>
+        <input type="radio" id="femme" name="civilite" value="femme">
+        <label for="femme">Femme</label><br><br>
+    </td>
+    <td>
+        <label for="ville">Ville</label>
+        <input type="text" id="ville" name="ville" placeholder="Votre
+Ville"><br><br>
+
+        <label for="code-postal">Code Postale</label>
+        <input type="text" id="code-postal" name="code-postal"
+placeholder="Votre Code Postal"><br><br>
+
+        <label for="adresse">Adresse</label><br>
+        <textarea id="adresse" name="adresse" rows="4"
+cols="50"></textarea><br><br>
+
+        <label for="date-naissance">Date de Naissance</label>
+        <input type="date" id="date-naissance" name="date-naissance"><br><br>
+
+        <label for="jauge">Jauge</label>
+        <input type="range" id="jauge" name="jauge" min="0" max="100"><br><br>
+
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone"
+placeholder="Votre Numéro de Tél"><br><br>
+
+        <label for="recherche">Recherche</label>
+        <input type="search" id="recherche" name="recherche"
+placeholder="Recherche"><br><br>
+
+        <label for="url">URL</label>
+        <input type="url" id="url" name="url" placeholder="URL"><br><br>
+
+        <label for="couleur">Couleur</label>
+        <input type="color" id="couleur" name="couleur" value="#000000"><br><br>
+
+        <input type="submit" value="Valider">
+        </td>
+        </tr>
+    </form>
+    </table>

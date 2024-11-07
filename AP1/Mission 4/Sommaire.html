@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Exercices</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff3300, #0044cc);
+            background-size: 400% 400%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            animation: gradientAnimation 10s ease infinite, fadeInBody 1.5s ease-in;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInElement {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            background-color: rgba(255, 51, 0, 0.9);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            animation: fadeInElement 2s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            animation: fadeInElement 2.5s ease-out;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #4CAF50;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+            animation: fadeInElement 2s ease-out;
+        }
+
+        main a {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+
+        main a:hover {
+            background-color: #4CAF50;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            animation: fadeInElement 3s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <a href="cv.html">CV</a>
+        <a href="../../index.html">Retour au Sommaire</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>

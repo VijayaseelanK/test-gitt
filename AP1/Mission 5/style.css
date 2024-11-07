@@ -1,0 +1,175 @@
+/* Reset des marges et padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style global pour le body */
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Menu principal */
+nav {
+    background-color: #444;
+    padding: 10px 0;
+}
+
+ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+/* Sous-menu */
+ul.tp-list {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    display: none;
+    z-index: 1000;
+    width: 200px;
+    padding: 0;
+}
+
+/* Style pour les liens dans le sous-menu */
+ul.tp-list li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Affichage des sous-menus au survol de l'élément parent */
+ul.menu > li:hover .tp-list {
+    display: block;
+}
+
+/* Sections spécifiques avec des couleurs différentes */
+ul.tp-list.html-css {
+    background-color: #e74c3c; /* Rouge */
+}
+
+ul.tp-list.javascript {
+    background-color: #f39c12; /* Orange */
+}
+
+ul.tp-list.databases {
+    background-color: #27ae60; /* Vert */
+}
+
+ul.tp-list.php {
+    background-color: #2980b9; /* Bleu */
+}
+
+ul.tp-list.missions {
+    background-color: #8e44ad; /* Violet */
+}
+
+ul.tp-list.certifications {
+    background-color: #ff69b4; /* Rose */
+}
+
+/* Style hover des sous-menus */
+ul.tp-list li a:hover {
+    background-color: #000000;
+    font-weight: bold;
+    color: white;
+}
+
+/* Changement de couleur de la barre supérieure lors du hover */
+ul.menu > li.html-css:hover {
+    background-color: #e74c3c; /* Rouge */
+}
+
+ul.menu > li.javascript:hover {
+    background-color: #f39c12; /* Orange */
+}
+
+ul.menu > li.databases:hover {
+    background-color: #27ae60; /* Vert */
+}
+
+ul.menu > li.php:hover {
+    background-color: #2980b9; /* Bleu */
+}
+
+ul.menu > li.missions:hover {
+    background-color: #8e44ad; /* Violet */
+}
+
+ul.menu > li.certifications:hover {
+    background-color: #ff69b4; /* Rose */
+}
+
+/* Style pour les titres du menu */
+ul.menu > li h2 {
+    padding: 15px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet hover sur les titres des menus */
+ul.menu > li:hover h2 {
+    transform: scale(1.05);
+}
+
+/* Version responsive pour mobile */
+.menu-label {
+    display: none;
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 680px) {
+    ul.menu {
+        flex-direction: column;
+        display: none;
+    }
+
+    #menu-toggle:checked ~ nav ul.menu {
+        display: flex;
+    }
+
+    .menu-label {
+        display: block;
+    }
+
+    ul.menu > li {
+        width: 100%;
+        text-align: center;
+    }
+
+    ul.tp-list {
+        position: static;
+        width: 100%;
+    }
+
+    ul.tp-list li a {
+        padding: 15px;
+        text-align: left;
+    }
+}
+
+
