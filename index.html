@@ -1,246 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio de Kanikathir Vijayaseelan</title>
     <style>
-        * {
+        body {
+            background-color: #0a0f18;
+            font-family: 'Arial', sans-serif;
+            color: #e0e0e0;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #88820e; 
-            color: #000; 
-        }
-
-        .header {
-            text-align: right;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .navbar {
             display: flex;
-            justify-content: center;
-            background-color: #000; 
-            padding: 10px 0;
-        }
-
-        .navbar a {
-            color: #ffffff; 
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            position: relative;
-        }
-
-        .navbar a:hover,
-        .dropdown:hover .dropbtn {
-            background-color: #333; 
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #00e1ff; 
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgb(255, 238, 0);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: #333; 
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #00ff62; 
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">PORTFOLIO DE KANIKATHIR</div>
-
-    <div class="navbar">
-        <div class="dropdown">
-            <a href="#" class="dropbtn">HTML et CSS</a>
-            <div class="dropdown-content">
-                <a href="../../TP1/page.html">TP1</a>
-                <a href="../../TP2/index.html">TP2</a>
-                <a href="../../TP3/formulaire.html">TP3</a>
-                <a href="../../TP4/index.html">TP4</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <a href="#" class="dropbtn">Javascript</a>
-            <div class="dropdown-content">
-                <a href="../../TP5/index.html">TP1</a>
-                <a href="../../TP_JS2/index.html">TP2</a>
-                <a href="#">Projet Final</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <a href="#" class="dropbtn">Base de Donnée</a>
-            <div class="dropdown-content">
-                <a href="./ORANGE TD (1).pdf">TP1</a>
-                <a href="#">TP2</a>
-                <a href="../Mission 6/Procédure_TP3_BDD.pdf">TP3</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <a href="#" class="dropbtn">Le PHP</a>
-            <div class="dropdown-content">
-                <a href="#">TP1</a>
-                <a href="#">TP2</a>
-                <a href="#">Projet Final</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <a href="#" class="dropbtn">Missions</a>
-            <div class="dropdown-content">
-                <a href="../Mission 1/Présentationsdesmétiers.html">Mission 1</a>
-                <a href="../Mission 2/nav.html">Mission 2</a>
-                <a href="../Mission 3/Mission3.html">Mission 3</a>
-                <a href="../Mission 4/Sommaire.html">Mission 4</a>
-                <a href="../Mission 5/index.html">Mission 5</a>
-                <a href="../Mission 6/index.html">Mission 6</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <a href="#" class="dropbtn">Certification</a>
-            <div class="dropdown-content">
-                <a href="../../Attestation_de_suivi.pdf">Certification 1</a>
-                <a href="../../3.pdf">Certification 2</a>
-                <a href="../../4.pdf">Certification 3</a>
-                <a href="../..//Certificat_.pdf">Certification 4</a>
-                <a href="../../5.pdf">Certification 5</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="content">
-    </div>
-</body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            color: #000;
+            flex-direction: column;
+            height: 100vh;
             position: relative;
             overflow: hidden;
         }
 
-        /* Fond de la vidéo */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
         .video-background {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             z-index: -1;
         }
 
-        .header {
-            text-align: right;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3) contrast(1.1);
         }
 
-        .navbar {
+        h1 {
+            font-size: 3.5em;
+            margin: 20px 0;
+            letter-spacing: 3px;
+            color: #ff416c;
+            text-shadow: 2px 2px 15px rgba(255, 65, 108, 0.8);
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #ffffff;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 10px rgba(0, 255, 255, 0.7);
+        }
+
+        .tab-buttons {
             display: flex;
             justify-content: center;
-            background-color: #000;
-            padding: 10px 0;
+            margin-top: 20px;
         }
 
-        .navbar a {
+        .tab-button {
+            background-color: #6a0dad;
             color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 16px;
+            border: none;
+            padding: 12px 30px;
+            margin: 0 8px;
+            cursor: pointer;
+            font-size: 1.2em;
             font-weight: bold;
-            position: relative;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(106, 13, 173, 0.5);
         }
 
-        .navbar a:hover,
-        .dropdown:hover .dropbtn {
-            background-color: #333;
+        .tab-button:hover {
+            background-color: #ff416c;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 65, 108, 1);
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
+        .tab-content {
             display: none;
-            position: absolute;
-            background-color: #00e1ff;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgb(255, 238, 0);
-            z-index: 1;
+            margin-top: 20px;
+            width: 80%;
+            max-width: 800px;
         }
 
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
+        .tab-content.active {
+            display: block;
+        }
+
+        .scrollable-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            justify-items: center;
+        }
+
+        .card {
+            background-color: rgba(20, 20, 20, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            width: 100%;
+            max-width: 150px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
+        }
+
+        .card a {
             text-decoration: none;
-            display: block;
+            color: #00ffff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0px 0px 5px #00ffff;
         }
 
-        .dropdown-content a:hover {
-            background-color: #00ff62;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .scrollable-list {
+                grid-template-columns: 1fr;
+                max-height: 200px;
+            }
         }
     </style>
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function (tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+        
+        window.onload = function () {
+            showTab('tab-tp');
+        };
+    </script>
 </head>
+
 <body>
-    <!-- Vidéo de fond -->
-    <video autoplay muted loop class="video-background">
-        <source src="../../İsimsiz video ‐ Clipchamp ile yapıldı (3).mp4" type="video/mp4">
-    </video>
-    <div class="navbar">
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="İsimsiz video ‐ Clipchamp ile yapıldı (3).mp4" type="video/mp4">
+        </video>
     </div>
-    <div class="content">
+
+    <div class="container">
+        <h1>Kanikathir Vijayaseelan</h1>
+        <p>Bienvenue sur mon portfolio ! Explorez mes projets et travaux en cliquant sur les boutons ci-dessous.</p>
+
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="showTab('tab-tp')">TP</button>
+            <button class="tab-button" onclick="showTab('tab-mission')">Mission</button>
+        </div>
+
+        <div id="tab-tp" class="tab-content">
+            <div class="scrollable-list">
+                <div class="card"><a href="TP1/page.html">TP1</a></div>
+                <div class="card"><a href="TP2/sommaire.html">TP2 Non noté</a></div>
+                <div class="card"><a href="TP3/formulaire.html">TP3</a></div>
+                <div class="card"><a href="TP4/index.html">TP4</a></div>
+                <div class="card"><a href="TP5/index.html">TP5</a></div>
+                <div class="card"><a href="TP_JS2/index.html">TP_JS1</a></div>
+                <div class="card"><a href="TP_JS1/index.html">TP_JS_noté</a></div>
+            </div>
+        </div>
+
+        <div id="tab-mission" class="tab-content">
+            <div class="scrollable-list">
+                <div class="card"><a href="AP1/Mission 1/Présentationsdesmétiers.html">Mission 1</a></div>
+                <div class="card"><a href="AP1/Mission 2/Mission2.html">Mission 2</a></div>
+                <div class="card"><a href="AP1/Mission 3/Mission3.html">Mission 3</a></div>
+                <div class="card"><a href="AP1/Mission 4/Sommaire.html">Mission 4</a></div>
+                <div class="card"><a href="AP1/Mission 5/index.html">Mission 5</a></div>
+                <div class="card"><a href="AP1/Mission 6/index.html">Mission 6</a></div>
+            </div>
+        </div>
     </div>
 </body>
-</html>
 </html>
