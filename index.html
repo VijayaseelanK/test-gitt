@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Kanikathir</title>
+    <title>Portfolio</title>
     <style>
-        /* Réinitialisation et mise en forme de base */
         * {
             margin: 0;
             padding: 0;
@@ -13,84 +12,39 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #111;
-            color: #fff;
-            overflow-x: hidden;
-            position: relative;
-            height: 100vh;
-            background-image: linear-gradient(45deg, #4e00ff, #00e1ff);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            font-family: Arial, sans-serif;
+            background-color: #88820e; 
+            color: #000; 
         }
 
-        /* Animation de fond */
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Fond vidéo qui couvre l'écran */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        /* En-tête */
         .header {
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 48px;
+            text-align: right;
+            padding: 20px;
+            font-size: 24px;
             font-weight: bold;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
-            animation: fadeIn 2s ease-out;
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Navigation */
         .navbar {
             display: flex;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            background-color: #000; 
+            padding: 10px 0;
         }
 
         .navbar a {
-            color: #fff;
+            color: #ffffff; 
             text-decoration: none;
-            padding: 12px 25px;
-            font-size: 18px;
+            padding: 10px 20px;
+            font-size: 16px;
             font-weight: bold;
             position: relative;
-            margin: 0 15px;
-            border-radius: 30px;
-            transition: all 0.3s ease-in-out;
         }
 
-        .navbar a:hover {
-            background-color: #00ff62;
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 255, 98, 0.7);
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #333; 
         }
 
-        /* Effet Dropdown */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -99,123 +53,63 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #00e1ff;
+            background-color: #00e1ff; 
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 255, 255, 0.5);
+            box-shadow: 0px 8px 16px 0px rgb(255, 238, 0);
             z-index: 1;
-            border-radius: 10px;
         }
 
         .dropdown-content a {
-            color: #333;
+            color: #333; 
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .dropdown-content a:hover {
-            background-color: #00ff62;
-            transform: scale(1.05);
+            background-color: #00ff62; 
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
-        /* Contenu principal */
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            text-align: center;
-            font-size: 20px;
-            letter-spacing: 2px;
-            color: #fff;
-            padding: 20px;
-        }
-
-        .content h1 {
-            font-size: 72px;
-            font-weight: 600;
-            color: #ff416c;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 15px rgba(255, 65, 108, 0.8);
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        .content p {
-            font-size: 20px;
-            color: #eee;
-            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Animation de rebond pour le titre */
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        /* Section de contenu supplémentaire */
-        .section {
-            padding: 40px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            margin-top: 30px;
-            max-width: 800px;
-            width: 100%;
-            margin: 30px auto;
-            text-align: left;
-        }
     </style>
 </head>
 <body>
-    <!-- Vidéo de fond -->
-    <video autoplay muted loop class="video-background">
-        <source src="../../İsimsiz video ‐ Clipchamp ile yapıldı (3).mp4" type="video/mp4">
-    </video>
+    <div class="header">PORTFOLIO DE KANIKATHIR</div>
 
-    <!-- En-tête -->
-    <div class="header">Portfolio de Kanikathir</div>
-
-    <!-- Navigation -->
     <div class="navbar">
         <div class="dropdown">
             <a href="#" class="dropbtn">HTML et CSS</a>
             <div class="dropdown-content">
-                <a href="../../TP1/page.html">TP1</a>
-                <a href="../../TP2/index.html">TP2</a>
-                <a href="../../TP3/formulaire.html">TP3</a>
-                <a href="../../TP4/index.html">TP4</a>
+                <a href="../PORFOLIO/TP1/page.html">TP1</a>
+                <a href="../PORFOLIO/TP2/index.html">TP2</a>
+                <a href="../PORFOLIO/TP3/formulaire.html">TP3</a>
+                <a href="../PORFOLIO/TP4/index.html">TP4</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">JavaScript</a>
+            <a href="#" class="dropbtn">Javascript</a>
             <div class="dropdown-content">
-                <a href="../../TP5/index.html">TP1</a>
-                <a href="../../TP_JS2/index.html">TP2</a>
-                <a href="../../TP_JS1/index.html">TP3</a>
+                <a href="../PORFOLIO/TP_JS_non noté/index.html">TP1</a>
+                <a href="../PORFOLIO/TP_JS2/index.html">TP2</a>
+                <a href="../PORFOLIO/">TP3</a>
+                <a href="../PORFOLIO/#">TP4</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">Base de Données</a>
+            <a href="#" class="dropbtn">Base de Donnée</a>
             <div class="dropdown-content">
-                <a href="./ORANGE TD (1).pdf">TP1</a>
+                <a href="../PORFOLIO/AP1/Mission 5/ORANGE TD (1).pdf">TP1</a>
                 <a href="#">TP2</a>
-                <a href="../Mission 6/Procédure_TP3_BDD.pdf">TP3</a>
+                <a href="../PORFOLIO/AP1/Mission 6/">TP3</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">PHP</a>
+            <a href="#" class="dropbtn">Le PHP</a>
             <div class="dropdown-content">
                 <a href="#">TP1</a>
                 <a href="#">TP2</a>
@@ -226,17 +120,130 @@
         <div class="dropdown">
             <a href="#" class="dropbtn">Missions</a>
             <div class="dropdown-content">
-                <a href="../Mission 1/Présentationsdesmétiers.html">Mission 1</a>
-                <a href="../Mission 2/nav.html">Mission 2</a>
-                <a href="../Mission 3/Mission3.html">Mission 3</a>
-                <a href="../Mission 4/Sommaire.html">Mission 4</a>
-                <a href="../Mission 5/index.html">Mission 5</a>
-                <a href="../Mission 6/index.html">Mission 6</a>
+                <a href="../PORFOLIO/AP1/Mission 1/Présentationsdesmétiers.html 1/Présentationsdesmétiers.html">Mission 1</a>
+                <a href="../PORFOLIO/AP1/Mission 2/Mission2.html">Mission 2</a>
+                <a href="../PORFOLIO/AP1/Mission 3/Mission3.html">Mission 3</a>
+                <a href="../PORFOLIO/AP1/Mission 4/Sommaire.html">Mission 4</a>
+                <a href="../PORFOLIO/AP1/Mission 5/index.html">Mission 5</a>
+                <a href="../PORFOLIO/AP1/Mission 6/index.html">Mission 6</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">Certifications</a>
+            <a href="#" class="dropbtn">Certification</a>
             <div class="dropdown-content">
-                <a href="../../Attestation_de_suivi.pdf">Certification 1</a>
-                <a href="../../3.pdf">Certification 2
+                <a href="../PORFOLIO/CERTFICATION/Certificat_.pdf">Certification 1</a>
+                <a href="../PORFOLIO/CERTFICATION/Attestation_de_suivi.pdf">Certification 2</a>
+                <a href="../PORFOLIO/CERTFICATION/3.pdf">Certification 3</a>
+                <a href="../PORFOLIO/CERTFICATION/4.pdf">Certification 4</a>
+                <a href="../PORFOLIO/CERTFICATION/5.pdf">Certification 5</a>
+                <a href="../PORFOLIO/CERTFICATION/M46szEC7TdXk36rTaED9MCerkmtEESQFPXkI6CTPXo3Kc8pQSallHPhrTVcu_164020_15112024.pdf">Certification 6</a>
+                <a href="../PORFOLIO/CERTFICATION/ATTT.pdf">Certification 7</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+    </div>
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Fond de la vidéo */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .header {
+            text-align: right;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #333;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #00e1ff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgb(255, 238, 0);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #00ff62;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Vidéo de fond -->
+    <video autoplay muted loop class="video-background">
+        <source src="y2meta.com-Blue lock edit !! Isagi first goal in blue lock-(1080p60)_Trim.mp4" type="video/mp4">
+    </video>
+    <div class="navbar">
+    </div>
+    <div class="content">
+    </div>
+</body>
+</html>
+</html>
