@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio de Kanikathir</title>
     <style>
         * {
             margin: 0;
@@ -12,66 +12,97 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #88820e; 
-            color: #000; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
         }
 
         .header {
-            text-align: right;
-            padding: 20px;
-            font-size: 24px;
+            text-align: center;
+            padding: 30px;
+            font-size: 32px;
             font-weight: bold;
+            color: #555;
+            background-color: #eaf1f8;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
             display: flex;
             justify-content: center;
-            background-color: #000; 
+            background-color: #ffffff;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             padding: 10px 0;
         }
 
         .navbar a {
-            color: #ffffff; 
+            color: #007acc;
             text-decoration: none;
             padding: 10px 20px;
             font-size: 16px;
             font-weight: bold;
-            position: relative;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 4px;
         }
 
-        .navbar a:hover,
-        .dropdown:hover .dropbtn {
-            background-color: #333; 
+        .navbar a:hover {
+            background-color: #007acc;
+            color: #ffffff;
         }
 
         .dropdown {
             position: relative;
             display: inline-block;
+            margin: 0 10px;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #00e1ff; 
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgb(255, 238, 0);
+            background-color: #ffffff;
+            min-width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
 
         .dropdown-content a {
-            color: #333; 
-            padding: 12px 16px;
+            color: #007acc;
+            padding: 10px 20px;
             text-decoration: none;
             display: block;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .dropdown-content a:hover {
-            background-color: #00ff62; 
+            background-color: #007acc;
+            color: #ffffff;
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eaf1f8;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
@@ -82,34 +113,26 @@
         <div class="dropdown">
             <a href="#" class="dropbtn">HTML et CSS</a>
             <div class="dropdown-content">
-                <a href="../PORFOLIO/TP1/page.html">TP1</a>
-                <a href="../PORFOLIO/TP2/index.html">TP2</a>
-                <a href="../PORFOLIO/TP3/formulaire.html">TP3</a>
-                <a href="../PORFOLIO/TP4/index.html">TP4</a>
+                <a href="TP1/page.html">TP1</a>
+                <a href="TP2/index.html">TP2</a>
+                <a href="TP3/formulaire.html">TP3</a>
+                <a href="TP4/index.html">TP4</a>
+                <a href="TP5/index.html">TP5</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">Javascript</a>
+            <a href="#" class="dropbtn">JavaScript</a>
             <div class="dropdown-content">
-                <a href="../PORFOLIO/TP_JS_non noté/index.html">TP1</a>
-                <a href="../PORFOLIO/TP_JS2/index.html">TP2</a>
-                <a href="../PORFOLIO/">TP3</a>
-                <a href="../PORFOLIO/#">TP4</a>
+                <a href="TP_JS_non_noté/index.html">TP1</a>
+                <a href="TP_JS2/index.html">TP2</a>
+                <a href="TP_JS3/index.html">TP3</a>
+                <a href="TP_JS4/index.html">TP4</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">Base de Donnée</a>
-            <div class="dropdown-content">
-                <a href="../PORFOLIO/AP1/Mission 5/ORANGE TD (1).pdf">TP1</a>
-                <a href="#">TP2</a>
-                <a href="../PORFOLIO/AP1/Mission 6/">TP3</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <a href="#" class="dropbtn">Le PHP</a>
+            <a href="#" class="dropbtn">PHP</a>
             <div class="dropdown-content">
                 <a href="#">TP1</a>
                 <a href="#">TP2</a>
@@ -118,132 +141,33 @@
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">Missions</a>
+            <a href="#" class="dropbtn">Certifications</a>
             <div class="dropdown-content">
-                <a href="../PORFOLIO/AP1/Mission 1/Présentationsdesmétiers.html 1/Présentationsdesmétiers.html">Mission 1</a>
-                <a href="../PORFOLIO/AP1/Mission 2/Mission2.html">Mission 2</a>
-                <a href="../PORFOLIO/AP1/Mission 3/Mission3.html">Mission 3</a>
-                <a href="../PORFOLIO/AP1/Mission 4/Sommaire.html">Mission 4</a>
-                <a href="../PORFOLIO/AP1/Mission 5/index.html">Mission 5</a>
-                <a href="../PORFOLIO/AP1/Mission 6/index.html">Mission 6</a>
+                <a href="CERTIFICATION/Certificat_1.pdf">Certification 1</a>
+                <a href="CERTIFICATION/Certificat_2.pdf">Certification 2</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">Certification</a>
+            <a href="#" class="dropbtn">Missions</a>
             <div class="dropdown-content">
-                <a href="../CERTFICATION/Certificat_.pdf">Certification 1</a>
-                <a href="../PORFOLIO/CERTFICATION/Attestation_de_suivi.pdf">Certification 2</a>
-                <a href="../PORFOLIO/CERTFICATION/3.pdf">Certification 3</a>
-                <a href="../PORFOLIO/CERTFICATION/4.pdf">Certification 4</a>
-                <a href="../PORFOLIO/CERTFICATION/5.pdf">Certification 5</a>
-                <a href="../PORFOLIO/CERTFICATION/M46szEC7TdXk36rTaED9MCerkmtEESQFPXkI6CTPXo3Kc8pQSallHPhrTVcu_164020_15112024.pdf">Certification 6</a>
-                <a href="../PORFOLIO/AP1/CERTFICATION/ATTT.pdf">Certification 7</a>
+                <a href="AP1/Mission 1/Présentationsdesmétiers.html">Mission 1</a>
+                <a href="AP1/Mission 2/nav.html">Mission 2</a>
+                <a href="AP1/Mission 3/Mission3.html">Mission 3</a>
+                <a href="AP1/Mission 4/cv2.html">Mission 4</a>
+                <a href="AP1/Mission 5/index.html">Mission 5</a>
+                <a href="AP1/Mission 6/index.html">Mission 6</a>
             </div>
         </div>
     </div>
 
     <div class="content">
+        <p>Bienvenue sur mon portfolio !</p>
+        <p>Explorez mes projets et découvrez mes compétences en développement web.</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Kanikathir - Tous droits réservés.
     </div>
 </body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            color: #000;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Fond de la vidéo */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .header {
-            text-align: right;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #000;
-            padding: 10px 0;
-        }
-
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            position: relative;
-        }
-
-        .navbar a:hover,
-        .dropdown:hover .dropbtn {
-            background-color: #333;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #00e1ff;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgb(255, 238, 0);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #00ff62;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-    <!-- Vidéo de fond -->
-    <video autoplay muted loop class="video-background">
-        <source src="y2meta.com-Blue lock edit !! Isagi first goal in blue lock-(1080p60)_Trim.mp4" type="video/mp4">
-    </video>
-    <div class="navbar">
-    </div>
-    <div class="content">
-    </div>
-</body>
-</html>
 </html>
