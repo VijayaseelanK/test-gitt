@@ -11,10 +11,32 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
+            display: flex;
+            flex-direction: column;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f7fa;
             color: #333;
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .header {
@@ -22,21 +44,21 @@
             padding: 30px;
             font-size: 32px;
             font-weight: bold;
-            color: #555;
-            background-color: #eaf1f8;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
             display: flex;
             justify-content: center;
-            background-color: #ffffff;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff; /* Fond du menu principal blanc */
+            box-shadow: 0px 2px 4px rgb(0, 0, 0);
             padding: 10px 0;
         }
 
         .navbar a {
-            color: #007acc;
+            color: #000; /* Texte noir */
             text-decoration: none;
             padding: 10px 20px;
             font-size: 16px;
@@ -46,8 +68,8 @@
         }
 
         .navbar a:hover {
-            background-color: #007acc;
-            color: #ffffff;
+            background-color: #000; /* Fond noir au survol */
+            color: #fff; /* Texte blanc au survol */
         }
 
         .dropdown {
@@ -59,16 +81,16 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #ffffff;
+            background-color: #fff; /* Fond blanc pour le sous-menu */
             min-width: 200px;
-            border: 1px solid #ddd;
+            border: 1px solid #000; /* Bordure noire autour du sous-menu */
             border-radius: 4px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
 
         .dropdown-content a {
-            color: #007acc;
+            color: #000; /* Texte noir pour les liens du sous-menu */
             padding: 10px 20px;
             text-decoration: none;
             display: block;
@@ -76,8 +98,8 @@
         }
 
         .dropdown-content a:hover {
-            background-color: #007acc;
-            color: #ffffff;
+            background-color: #000; /* Fond noir au survol du sous-menu */
+            color: #fff; /* Texte blanc au survol du sous-menu */
         }
 
         .dropdown:hover .dropdown-content {
@@ -85,11 +107,15 @@
         }
 
         .content {
+            flex: 1; /* Remplit l'espace disponible */
             padding: 40px;
             text-align: center;
             font-size: 18px;
             line-height: 1.6;
-            color: #555;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            border-radius: 8px;
         }
 
         .content p {
@@ -99,14 +125,21 @@
         .footer {
             text-align: center;
             padding: 20px;
-            background-color: #eaf1f8;
-            color: #777;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
             font-size: 14px;
             border-top: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
+    <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="file.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <div class="header">PORTFOLIO DE KANIKATHIR</div>
 
     <div class="navbar">
@@ -124,8 +157,8 @@
         <div class="dropdown">
             <a href="#" class="dropbtn">JavaScript</a>
             <div class="dropdown-content">
-                <a href="TP_JS_non_noté/index.html">TP1</a>
-                <a href="TP_JS2/index.html">TP2</a>
+                <a href="TP_JS2/index.html">TP1</a>
+                <a href="TP_JS_non noté/index.html">TP2</a>
                 <a href="TP_JS3/index.html">TP3</a>
                 <a href="TP_JS4/index.html">TP4</a>
             </div>
@@ -145,6 +178,13 @@
             <div class="dropdown-content">
                 <a href="CERTIFICATION/Certificat_1.pdf">Certification 1</a>
                 <a href="CERTIFICATION/Certificat_2.pdf">Certification 2</a>
+                <a href="CERTFICATION/3.pdf">Certification 3</a>
+                <a href="CERTFICATION/4.pdf">Certification 4</a>
+                <a href="CERTFICATION/5.pdf">Certification 5</a>
+                <a href="CERTFICATION/Attestation_de_suivi.pdf">Certification 6</a>
+                <a href="CERTFICATION/ATTT.pdf">Certification 7</a>
+                <a href="CERTFICATION/Certificat_.pdf">Certification 8</a>
+                <a href="CERTFICATION/M46szEC7TdXk36rTaED9MCerkmtEESQFPXkI6CTPXo3Kc8pQSallHPhrTVcu_164020_15112024.pdf">Certification 9</a>
             </div>
         </div>
 
@@ -157,13 +197,13 @@
                 <a href="AP1/Mission 4/cv2.html">Mission 4</a>
                 <a href="AP1/Mission 5/index.html">Mission 5</a>
                 <a href="AP1/Mission 6/index.html">Mission 6</a>
+                <a href="AP1/MISSION 8/index.html">Mission 8</a>
             </div>
         </div>
     </div>
 
     <div class="content">
         <p>Bienvenue sur mon portfolio !</p>
-        <p>Explorez mes projets et découvrez mes compétences en développement web.</p>
     </div>
 
     <div class="footer">
