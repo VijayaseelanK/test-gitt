@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banquette D'Exercices/title>
+    <title>Banquette D'Exercices avec Vidéo en Fond</title>
     <style>
         /* Styles de base */
         body {
@@ -15,6 +15,7 @@
             background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
         }
 
+        /* Vidéo en fond avec un préchargement automatique */
         video {
             position: fixed;
             top: 0;
@@ -23,6 +24,22 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+            display: none; /* La vidéo sera cachée jusqu'à ce qu'elle soit prête */
+        }
+
+        /* Animation de fade-in de la vidéo */
+        .video-visible {
+            display: block;
+            animation: fadeIn 2s ease-in-out; /* Animation de fondu en entrée */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .content {
@@ -82,13 +99,13 @@
 <body>
 
     <!-- Vidéo en fond -->
-    <video autoplay muted loop>
+    <video id="background-video" autoplay muted loop preload="auto" oncanplay="showVideo()">
         <source src="A.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la balise vidéo.
     </video>
 
     <div class="content">
-        <h1>15 Banquette d'Exercices</h1>
+        <h1>15 Exercices JavaScript Interactifs</h1>
 
         <table>
             <!-- Exercice 1 -->
@@ -253,7 +270,7 @@ function additionner() {
 
             <!-- Exercice 9 -->
             <tr>
-                <td>9. Trouver un nombre pair ou impair</td>
+                <td>9. Vérifier si un nombre est pair ou impair</td>
                 <td>
                     <input type="number" id="nombre" placeholder="Entrez un nombre">
                     <button onclick="verifierPairImpair()">Vérifier</button>
@@ -263,9 +280,138 @@ function additionner() {
 function verifierPairImpair() {
     const nombre = parseInt(document.getElementById('nombre').value);
     if (nombre % 2 === 0) {
-        alert(\`Le nombre \${nombre} est pair\`);
+        alert('Ce nombre est pair');
     } else {
-        alert(\`Le nombre \${nombre} est impair\`);
+        alert('Ce nombre est impair');
+    }
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 10 -->
+            <tr>
+                <td>10. Calculer la factorielle d'un nombre</td>
+                <td>
+                    <input type="number" id="factorielle" placeholder="Entrez un nombre">
+                    <button onclick="calculerFactorielle()">Calculer la factorielle</button>
+                    <button onclick="afficherCode('code10')">Afficher le code</button>
+                    <div id="code10" class="code-box">
+                        <pre>
+function calculerFactorielle() {
+    let n = parseInt(document.getElementById('factorielle').value);
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    alert(\`La factorielle de \${n} est \${result}\`);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 11 -->
+            <tr>
+                <td>11. Créer un compteur qui s'incrémente automatiquement</td>
+                <td>
+                    <p id="compteurAuto">0</p>
+                    <button onclick="demarrerCompteur()">Démarrer le compteur</button>
+                    <button onclick="afficherCode('code11')">Afficher le code</button>
+                    <div id="code11" class="code-box">
+                        <pre>
+function demarrerCompteur() {
+    let compteur = 0;
+    setInterval(function() {
+        compteur++;
+        document.getElementById('compteurAuto').textContent = compteur;
+    }, 1000);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 12 -->
+            <tr>
+                <td>12. Trouver le plus grand de trois nombres</td>
+                <td>
+                    <input type="number" id="nombreA" placeholder="Nombre A">
+                    <input type="number" id="nombreB" placeholder="Nombre B">
+                    <input type="number" id="nombreC" placeholder="Nombre C">
+                    <button onclick="trouverPlusGrand()">Trouver le plus grand</button>
+                    <button onclick="afficherCode('code12')">Afficher le code</button>
+                    <div id="code12" class="code-box">
+                        <pre>
+function trouverPlusGrand() {
+    const a = parseInt(document.getElementById('nombreA').value);
+    const b = parseInt(document.getElementById('nombreB').value);
+    const c = parseInt(document.getElementById('nombreC').value);
+    alert(\`Le plus grand nombre est : \${Math.max(a, b, c)}\`);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 13 -->
+            <tr>
+                <td>13. Trier une liste de nombres</td>
+                <td>
+                    <input type="text" id="listeNombres" placeholder="Entrez des nombres séparés par une virgule">
+                    <button onclick="trierNombres()">Trier les nombres</button>
+                    <button onclick="afficherCode('code13')">Afficher le code</button>
+                    <div id="code13" class="code-box">
+                        <pre>
+function trierNombres() {
+    let nombres = document.getElementById('listeNombres').value.split(',').map(Number);
+    nombres.sort((a, b) => a - b);
+    alert(\`Les nombres triés sont : \${nombres.join(', ')}\`);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 14 -->
+            <tr>
+                <td>14. Créer un tableau de carrés de nombres</td>
+                <td>
+                    <input type="number" id="maxCarres" placeholder="Entrez un nombre">
+                    <button onclick="creerCarres()">Créer les carrés</button>
+                    <button onclick="afficherCode('code14')">Afficher le code</button>
+                    <div id="code14" class="code-box">
+                        <pre>
+function creerCarres() {
+    let n = parseInt(document.getElementById('maxCarres').value);
+    let carres = [];
+    for (let i = 1; i <= n; i++) {
+        carres.push(i * i);
+    }
+    alert(\`Les carrés des nombres sont : \${carres.join(', ')}\`);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 15 -->
+            <tr>
+                <td>15. Vérifier si un mot est un palindrome</td>
+                <td>
+                    <input type="text" id="motPalindrome" placeholder="Entrez un mot">
+                    <button onclick="verifierPalindrome()">Vérifier</button>
+                    <button onclick="afficherCode('code15')">Afficher le code</button>
+                    <div id="code15" class="code-box">
+                        <pre>
+function verifierPalindrome() {
+    let mot = document.getElementById('motPalindrome').value;
+    let inverse = mot.split('').reverse().join('');
+    if (mot === inverse) {
+        alert('C\'est un palindrome');
+    } else {
+        alert('Ce n\'est pas un palindrome');
     }
 }
                         </pre>
@@ -276,9 +422,16 @@ function verifierPairImpair() {
     </div>
 
     <script>
+        // Fonction pour afficher le code JavaScript
         function afficherCode(id) {
             const codeBox = document.getElementById(id);
             codeBox.style.display = (codeBox.style.display === 'none' || codeBox.style.display === '') ? 'block' : 'none';
+        }
+
+        // Fonction pour afficher la vidéo après qu'elle soit prête
+        function showVideo() {
+            const video = document.getElementById('background-video');
+            video.classList.add('video-visible');
         }
     </script>
 </body>
