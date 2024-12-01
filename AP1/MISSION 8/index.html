@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banquette D'Exercices avec Vidéo en Fond</title>
+    <style>
+        /* Styles de base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: inline-block;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #444;
+            text-align: left;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .code-box {
+            background-color: #333;
+            color: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin-top: 10px;
+            display: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Vidéo en fond -->
+    <video autoplay muted loop>
+        <source src="../../file (1).mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+
+    <div class="content">
+        <h1>15 Exercices JavaScript Interactifs</h1>
+
+        <table>
+            <!-- Exercice 1 -->
+            <tr>
+                <td>1. Convertir Celsius en Fahrenheit</td>
+                <td>
+                    <button onclick="convertirTemperature()">Convertir 25°C en °F</button>
+                    <button onclick="afficherCode('code1')">Afficher le code</button>
+                    <div id="code1" class="code-box">
+                        <pre>
+const celsius = 25;
+const fahrenheit = (celsius * 9/5) + 32;
+document.getElementById('conversion').textContent = \`\${celsius}°C = \${fahrenheit}°F\`;
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 2 -->
+            <tr>
+                <td>2. Ajuster la taille du texte</td>
+                <td>
+                    <p id="texte">Ceci est un texte ajustable.</p>
+                    <button onclick="augmenterTaille()">Augmenter la taille</button>
+                    <button onclick="reduireTaille()">Réduire la taille</button>
+                    <button onclick="afficherCode('code2')">Afficher le code</button>
+                    <div id="code2" class="code-box">
+                        <pre>
+function augmenterTaille() {
+    let texte = document.getElementById('texte');
+    let taille = parseInt(window.getComputedStyle(texte).fontSize);
+    texte.style.fontSize = (taille + 2) + 'px';
+}
+
+function reduireTaille() {
+    let texte = document.getElementById('texte');
+    let taille = parseInt(window.getComputedStyle(texte).fontSize);
+    texte.style.fontSize = (taille - 2) + 'px';
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 3 -->
+            <tr>
+                <td>3. Compter le nombre de clics</td>
+                <td>
+                    <p id="compteur">0</p>
+                    <button onclick="incrementer()">Cliquez ici</button>
+                    <button onclick="afficherCode('code3')">Afficher le code</button>
+                    <div id="code3" class="code-box">
+                        <pre>
+function incrementer() {
+    let compteur = parseInt(document.getElementById('compteur').textContent);
+    document.getElementById('compteur').textContent = compteur + 1;
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 4 -->
+            <tr>
+                <td>4. Afficher une salutation selon l'heure</td>
+                <td>
+                    <button onclick="saluerSelonHeure()">Saluer selon l'heure</button>
+                    <button onclick="afficherCode('code4')">Afficher le code</button>
+                    <div id="code4" class="code-box">
+                        <pre>
+function saluerSelonHeure() {
+    const heure = new Date().getHours();
+    let salutation = '';
+    if (heure < 12) {
+        salutation = 'Bonjour';
+    } else if (heure < 18) {
+        salutation = 'Bon après-midi';
+    } else {
+        salutation = 'Bonsoir';
+    }
+    alert(salutation);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 5 -->
+            <tr>
+                <td>5. Afficher l'heure actuelle</td>
+                <td>
+                    <button onclick="afficherHeure()">Afficher l'heure</button>
+                    <button onclick="afficherCode('code5')">Afficher le code</button>
+                    <div id="code5" class="code-box">
+                        <pre>
+function afficherHeure() {
+    const maintenant = new Date();
+    alert(\`L'heure actuelle est : ${maintenant.getHours()}:${maintenant.getMinutes()}:${maintenant.getSeconds()}\`);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 6 -->
+            <tr>
+                <td>6. Changer la couleur d'un élément</td>
+                <td>
+                    <button onclick="changerCouleur()">Changer la couleur</button>
+                    <button onclick="afficherCode('code6')">Afficher le code</button>
+                    <div id="code6" class="code-box">
+                        <pre>
+function changerCouleur() {
+    document.body.style.backgroundColor = 'lightblue';
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 7 -->
+            <tr>
+                <td>7. Vérifier un mot de passe</td>
+                <td>
+                    <input type="password" id="password" placeholder="Entrez un mot de passe">
+                    <button onclick="verifierMotDePasse()">Vérifier</button>
+                    <button onclick="afficherCode('code7')">Afficher le code</button>
+                    <div id="code7" class="code-box">
+                        <pre>
+function verifierMotDePasse() {
+    const password = document.getElementById('password').value;
+    if (password === '1234') {
+        alert('Mot de passe correct');
+    } else {
+        alert('Mot de passe incorrect');
+    }
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 8 -->
+            <tr>
+                <td>8. Additionner deux nombres</td>
+                <td>
+                    <input type="number" id="nombre1" placeholder="Nombre 1">
+                    <input type="number" id="nombre2" placeholder="Nombre 2">
+                    <button onclick="additionner()">Additionner</button>
+                    <button onclick="afficherCode('code8')">Afficher le code</button>
+                    <div id="code8" class="code-box">
+                        <pre>
+function additionner() {
+    const nombre1 = parseInt(document.getElementById('nombre1').value);
+    const nombre2 = parseInt(document.getElementById('nombre2').value);
+    alert(\`La somme est : \${nombre1 + nombre2}\`);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Exercice 9 -->
+            <tr>
+                <td>9. Trouver un nombre pair ou impair</td>
+                <td>
+                    <input type="number" id="nombre" placeholder="Entrez un nombre">
+                    <button onclick="verifierPairImpair()">Vérifier</button>
+                    <button onclick="afficherCode('code9')">Afficher le code</button>
+                    <div id="code9" class="code-box">
+                        <pre>
+function verifierPairImpair() {
+    const nombre = parseInt(document.getElementById('nombre').value);
+    if (nombre % 2 === 0) {
+        alert(\`Le nombre \${nombre} est pair\`);
+    } else {
+        alert(\`Le nombre \${nombre} est impair\`);
+    }
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function afficherCode(id) {
+            const codeBox = document.getElementById(id);
+            codeBox.style.display = (codeBox.style.display === 'none' || codeBox.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
