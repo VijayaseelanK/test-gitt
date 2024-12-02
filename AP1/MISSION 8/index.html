@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banquette D'Exercices avec Vidéo en Fond</title>
+    <title>15 Exercices Interactifs</title>
     <style>
-        /* Styles de base */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: white;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
-        /* Vidéo en fond avec un préchargement automatique */
         video {
             position: fixed;
             top: 0;
@@ -26,16 +24,14 @@
             z-index: -1;
         }
 
-        /* Style de la page */
         .content {
             position: relative;
             z-index: 1;
             padding: 20px;
-            border-radius: 10px;
             margin-top: 20px;
             display: inline-block;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         h1 {
@@ -83,7 +79,6 @@
 </head>
 <body>
 
-    <!-- Vidéo en fond -->
     <video id="background-video" autoplay muted loop preload="auto">
         <source src="A.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la balise vidéo.
@@ -91,31 +86,29 @@
 
     <div class="content">
         <h1>15 Exercices JavaScript Interactifs</h1>
-
         <table>
-            <!-- Exercice 1 -->
             <tr>
                 <td>1. Convertir Celsius en Fahrenheit</td>
                 <td>
-                    <button onclick="convertirTemperature()">Convertir 25°C en °F</button>
+                    <button onclick="convertirTemperature()">Vérifier</button>
                     <button onclick="afficherCode('code1')">Afficher le code</button>
                     <div id="code1" class="code-box">
                         <pre>
-const celsius = 25;
-const fahrenheit = (celsius * 9/5) + 32;
-document.getElementById('conversion').textContent = \`\${celsius}°C = \${fahrenheit}°F\`;
+function convertirTemperature() {
+    const celsius = 25;
+    const fahrenheit = (celsius * 9 / 5) + 32;
+    alert(`${celsius}°C = ${fahrenheit}°F`);
+}
                         </pre>
                     </div>
                 </td>
             </tr>
 
-            <!-- Exercice 2 -->
             <tr>
                 <td>2. Ajuster la taille du texte</td>
                 <td>
                     <p id="texte">Ceci est un texte ajustable.</p>
-                    <button onclick="augmenterTaille()">Augmenter la taille</button>
-                    <button onclick="reduireTaille()">Réduire la taille</button>
+                    <button onclick="augmenterTaille()">Vérifier</button>
                     <button onclick="afficherCode('code2')">Afficher le code</button>
                     <div id="code2" class="code-box">
                         <pre>
@@ -135,12 +128,11 @@ function reduireTaille() {
                 </td>
             </tr>
 
-            <!-- Exercice 3 -->
             <tr>
                 <td>3. Compter le nombre de clics</td>
                 <td>
                     <p id="compteur">0</p>
-                    <button onclick="incrementer()">Cliquez ici</button>
+                    <button onclick="incrementer()">Vérifier</button>
                     <button onclick="afficherCode('code3')">Afficher le code</button>
                     <div id="code3" class="code-box">
                         <pre>
@@ -153,11 +145,10 @@ function incrementer() {
                 </td>
             </tr>
 
-            <!-- Exercice 4 -->
             <tr>
                 <td>4. Afficher une salutation selon l'heure</td>
                 <td>
-                    <button onclick="saluerSelonHeure()">Saluer selon l'heure</button>
+                    <button onclick="saluerSelonHeure()">Vérifier</button>
                     <button onclick="afficherCode('code4')">Afficher le code</button>
                     <div id="code4" class="code-box">
                         <pre>
@@ -178,226 +169,103 @@ function saluerSelonHeure() {
                 </td>
             </tr>
 
-            <!-- Exercice 5 -->
             <tr>
                 <td>5. Afficher l'heure actuelle</td>
                 <td>
-                    <button onclick="afficherHeure()">Afficher l'heure</button>
+                    <button onclick="afficherHeure()">Vérifier</button>
                     <button onclick="afficherCode('code5')">Afficher le code</button>
                     <div id="code5" class="code-box">
                         <pre>
 function afficherHeure() {
     const maintenant = new Date();
-    alert(\`L'heure actuelle est : ${maintenant.getHours()}:${maintenant.getMinutes()}:${maintenant.getSeconds()}\`);
+    alert(`L'heure actuelle est : ${maintenant.getHours()}:${maintenant.getMinutes()}:${maintenant.getSeconds()}`);
 }
                         </pre>
                     </div>
                 </td>
             </tr>
 
-            <!-- Exercice 6 -->
             <tr>
-                <td>6. Changer la couleur d'un élément</td>
+                <td>6. Calculer l'âge à partir de la date de naissance</td>
                 <td>
-                    <button onclick="changerCouleur()">Changer la couleur</button>
-                    <button onclick="afficherCode('code6')">Afficher le code</button>
-                    <div id="code6" class="code-box">
+                    <button onclick="calculerAge()">Vérifier</button>
+                    <button onclick="afficherCode('codeAge')">Afficher le code</button>
+                    <div id="codeAge" class="code-box">
                         <pre>
-function changerCouleur() {
-    document.body.style.backgroundColor = 'lightblue';
+function calculerAge() {
+    const naissance = prompt("Entrez votre année de naissance (ex: 1990):");
+    const anneeActuelle = new Date().getFullYear();
+    const age = anneeActuelle - naissance;
+    alert(`Votre âge est : ${age} ans.`);
 }
                         </pre>
                     </div>
                 </td>
             </tr>
 
-            <!-- Exercice 7 -->
             <tr>
-                <td>7. Vérifier un mot de passe</td>
+                <td>7. Simuler un réveil matin</td>
                 <td>
-                    <input type="password" id="password" placeholder="Entrez un mot de passe">
-                    <button onclick="verifierMotDePasse()">Vérifier</button>
-                    <button onclick="afficherCode('code7')">Afficher le code</button>
-                    <div id="code7" class="code-box">
+                    <button onclick="simulerReveil()">Vérifier</button>
+                    <button onclick="afficherCode('codeReveil')">Afficher le code</button>
+                    <div id="codeReveil" class="code-box">
                         <pre>
-function verifierMotDePasse() {
-    const password = document.getElementById('password').value;
-    if (password === '1234') {
-        alert('Mot de passe correct');
-    } else {
-        alert('Mot de passe incorrect');
-    }
+function simulerReveil() {
+    const heure = parseInt(prompt("Entrez l'heure de réveil (ex: 7):"));
+    const minutes = parseInt(prompt("Entrez les minutes (ex: 30):"));
+    alert(`Réveil réglé à ${heure}h${minutes < 10 ? '0' : ''}${minutes}. Bonne nuit!`);
 }
                         </pre>
                     </div>
                 </td>
             </tr>
 
-            <!-- Exercice 8 -->
             <tr>
-                <td>8. Additionner deux nombres</td>
+                <td>8. Calculer le pourboire</td>
                 <td>
-                    <input type="number" id="nombre1" placeholder="Nombre 1">
-                    <input type="number" id="nombre2" placeholder="Nombre 2">
-                    <button onclick="additionner()">Additionner</button>
-                    <button onclick="afficherCode('code8')">Afficher le code</button>
-                    <div id="code8" class="code-box">
+                    <button onclick="calculerPourboire()">Vérifier</button>
+                    <button onclick="afficherCode('codePourboire')">Afficher le code</button>
+                    <div id="codePourboire" class="code-box">
                         <pre>
-function additionner() {
-    const nombre1 = parseInt(document.getElementById('nombre1').value);
-    const nombre2 = parseInt(document.getElementById('nombre2').value);
-    alert(\`La somme est : \${nombre1 + nombre2}\`);
+function calculerPourboire() {
+    const montant = parseFloat(prompt("Entrez le montant de l'addition (€):"));
+    const pourboire = (montant * 0.15).toFixed(2);
+    alert(`Le pourboire recommandé est : ${pourboire} €`);
 }
                         </pre>
                     </div>
                 </td>
             </tr>
 
-            <!-- Exercice 9 -->
             <tr>
-                <td>9. Vérifier si un nombre est pair ou impair</td>
+                <td>9. Calculer les calories brûlées</td>
                 <td>
-                    <input type="number" id="nombre" placeholder="Entrez un nombre">
+                    <button onclick="calculerCalories()">Vérifier</button>
+                    <button onclick="afficherCode('codeCalories')">Afficher le code</button>
+                    <div id="codeCalories" class="code-box">
+                        <pre>
+function calculerCalories() {
+    const sport = prompt("Entrez le type d'activité (ex: marche, course):");
+    const minutes = parseInt(prompt("Durée de l'activité (en minutes):"));
+    const calories = sport === "marche" ? (minutes * 4) : (sport === "course" ? (minutes * 10) : 0);
+    alert(`Vous avez brûlé environ ${calories} calories.`);
+}
+                        </pre>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>10. Vérifier si un nombre est pair ou impair</td>
+                <td>
                     <button onclick="verifierPairImpair()">Vérifier</button>
-                    <button onclick="afficherCode('code9')">Afficher le code</button>
-                    <div id="code9" class="code-box">
+                    <button onclick="afficherCode('codePair')">Afficher le code</button>
+                    <div id="codePair" class="code-box">
                         <pre>
 function verifierPairImpair() {
-    const nombre = parseInt(document.getElementById('nombre').value);
-    if (nombre % 2 === 0) {
-        alert('Ce nombre est pair');
-    } else {
-        alert('Ce nombre est impair');
-    }
-}
-                        </pre>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- Exercice 10 -->
-            <tr>
-                <td>10. Calculer la factorielle d'un nombre</td>
-                <td>
-                    <input type="number" id="factorielle" placeholder="Entrez un nombre">
-                    <button onclick="calculerFactorielle()">Calculer</button>
-                    <button onclick="afficherCode('code10')">Afficher le code</button>
-                    <div id="code10" class="code-box">
-                        <pre>
-function calculerFactorielle() {
-    let n = parseInt(document.getElementById('factorielle').value);
-    let result = 1;
-    for (let i = 1; i <= n; i++) {
-        result *= i;
-    }
-    alert(\`La factorielle de \${n} est \${result}\`);
-}
-                        </pre>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- Exercice 11 -->
-            <tr>
-                <td>11. Créer un compteur qui s'incrémente automatiquement</td>
-                <td>
-                    <p id="compteurAuto">0</p>
-                    <button onclick="demarrerCompteur()">Démarrer le compteur</button>
-                    <button onclick="afficherCode('code11')">Afficher le code</button>
-                    <div id="code11" class="code-box">
-                        <pre>
-function demarrerCompteur() {
-    let compteur = 0;
-    setInterval(function() {
-        compteur++;
-        document.getElementById('compteurAuto').textContent = compteur;
-    }, 1000);
-}
-                        </pre>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- Exercice 12 -->
-            <tr>
-                <td>12. Trouver le plus grand de trois nombres</td>
-                <td>
-                    <input type="number" id="nombreA" placeholder="Nombre A">
-                    <input type="number" id="nombreB" placeholder="Nombre B">
-                    <input type="number" id="nombreC" placeholder="Nombre C">
-                    <button onclick="trouverPlusGrand()">Trouver le plus grand</button>
-                    <button onclick="afficherCode('code12')">Afficher le code</button>
-                    <div id="code12" class="code-box">
-                        <pre>
-function trouverPlusGrand() {
-    const a = parseInt(document.getElementById('nombreA').value);
-    const b = parseInt(document.getElementById('nombreB').value);
-    const c = parseInt(document.getElementById('nombreC').value);
-    alert(\`Le plus grand nombre est : \${Math.max(a, b, c)}\`);
-}
-                        </pre>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- Exercice 13 -->
-            <tr>
-                <td>13. Trier une liste de nombres</td>
-                <td>
-                    <input type="text" id="listeNombres" placeholder="Entrez des nombres séparés par une virgule">
-                    <button onclick="trierNombres()">Trier les nombres</button>
-                    <button onclick="afficherCode('code13')">Afficher le code</button>
-                    <div id="code13" class="code-box">
-                        <pre>
-function trierNombres() {
-    let nombres = document.getElementById('listeNombres').value.split(',').map(Number);
-    nombres.sort((a, b) => a - b);
-    alert(\`Les nombres triés sont : \${nombres.join(', ')}\`);
-}
-                        </pre>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- Exercice 14 -->
-            <tr>
-                <td>14. Créer un tableau de carrés de nombres</td>
-                <td>
-                    <input type="number" id="maxCarres" placeholder="Entrez un nombre">
-                    <button onclick="creerCarres()">Créer les carrés</button>
-                    <button onclick="afficherCode('code14')">Afficher le code</button>
-                    <div id="code14" class="code-box">
-                        <pre>
-function creerCarres() {
-    let n = parseInt(document.getElementById('maxCarres').value);
-    let carres = [];
-    for (let i = 1; i <= n; i++) {
-        carres.push(i * i);
-    }
-    alert(\`Les carrés des nombres sont : \${carres.join(', ')}\`);
-}
-                        </pre>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- Exercice 15 -->
-            <tr>
-                <td>15. Vérifier si un mot est un palindrome</td>
-                <td>
-                    <input type="text" id="motPalindrome" placeholder="Entrez un mot">
-                    <button onclick="verifierPalindrome()">Vérifier</button>
-                    <button onclick="afficherCode('code15')">Afficher le code</button>
-                    <div id="code15" class="code-box">
-                        <pre>
-function verifierPalindrome() {
-    let mot = document.getElementById('motPalindrome').value;
-    let inverse = mot.split('').reverse().join('');
-    if (mot === inverse) {
-        alert('C\'est un palindrome');
-    } else {
-        alert('Ce n\'est pas un palindrome');
-    }
+    const nombre = parseInt(prompt("Entrez un nombre:"));
+    const resultat = nombre % 2 === 0 ? "pair" : "impair";
+    alert(`Le nombre ${nombre} est ${resultat}.`);
 }
                         </pre>
                     </div>
@@ -407,17 +275,78 @@ function verifierPalindrome() {
     </div>
 
     <script>
-        // Fonction pour afficher le code JavaScript
         function afficherCode(id) {
             const codeBox = document.getElementById(id);
-            codeBox.style.display = (codeBox.style.display === 'none' || codeBox.style.display === '') ? 'block' : 'none';
+            codeBox.style.display = codeBox.style.display === "none" ? "block" : "none";
         }
 
-        // Fonction pour afficher la vidéo après qu'elle soit prête
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('background-video');
-            video.classList.add('video-visible');
-        });
+        // Toutes les fonctions spécifiques aux exercices
+        function convertirTemperature() {
+            const celsius = 25;
+            const fahrenheit = (celsius * 9 / 5) + 32;
+            alert(`${celsius}°C = ${fahrenheit}°F`);
+        }
+
+        function augmenterTaille() {
+            let texte = document.getElementById('texte');
+            let taille = parseInt(window.getComputedStyle(texte).fontSize);
+            texte.style.fontSize = (taille + 2) + 'px';
+        }
+
+        function incrementer() {
+            let compteur = parseInt(document.getElementById('compteur').textContent);
+            document.getElementById('compteur').textContent = compteur + 1;
+        }
+
+        function saluerSelonHeure() {
+            const heure = new Date().getHours();
+            let salutation = '';
+            if (heure < 12) {
+                salutation = 'Bonjour';
+            } else if (heure < 18) {
+                salutation = 'Bon après-midi';
+            } else {
+                salutation = 'Bonsoir';
+            }
+            alert(salutation);
+        }
+
+        function afficherHeure() {
+            const maintenant = new Date();
+            alert(`L'heure actuelle est : ${maintenant.getHours()}:${maintenant.getMinutes()}:${maintenant.getSeconds()}`);
+        }
+
+        function calculerAge() {
+            const naissance = prompt("Entrez votre année de naissance (ex: 1990):");
+            const anneeActuelle = new Date().getFullYear();
+            const age = anneeActuelle - naissance;
+            alert(`Votre âge est : ${age} ans.`);
+        }
+
+        function simulerReveil() {
+            const heure = parseInt(prompt("Entrez l'heure de réveil (ex: 7):"));
+            const minutes = parseInt(prompt("Entrez les minutes (ex: 30):"));
+            alert(`Réveil réglé à ${heure}h${minutes < 10 ? '0' : ''}${minutes}. Bonne nuit!`);
+        }
+
+        function calculerPourboire() {
+            const montant = parseFloat(prompt("Entrez le montant de l'addition (€):"));
+            const pourboire = (montant * 0.15).toFixed(2);
+            alert(`Le pourboire recommandé est : ${pourboire} €`);
+        }
+
+        function calculerCalories() {
+            const sport = prompt("Entrez le type d'activité (ex: marche, course):");
+            const minutes = parseInt(prompt("Durée de l'activité (en minutes):"));
+            const calories = sport === "marche" ? (minutes * 4) : (sport === "course" ? (minutes * 10) : 0);
+            alert(`Vous avez brûlé environ ${calories} calories.`);
+        }
+
+        function verifierPairImpair() {
+            const nombre = parseInt(prompt("Entrez un nombre:"));
+            const resultat = nombre % 2 === 0 ? "pair" : "impair";
+            alert(`Le nombre ${nombre} est ${resultat}.`);
+        }
     </script>
 </body>
 </html>
