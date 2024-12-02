@@ -24,24 +24,9 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            display: none; /* La vidéo sera cachée jusqu'à ce qu'elle soit prête */
         }
 
-        /* Animation de fade-in de la vidéo */
-        .video-visible {
-            display: block;
-            animation: fadeIn 2s ease-in-out; /* Animation de fondu en entrée */
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
+        /* Style de la page */
         .content {
             position: relative;
             z-index: 1;
@@ -99,7 +84,7 @@
 <body>
 
     <!-- Vidéo en fond -->
-    <video id="background-video" autoplay muted loop preload="auto" oncanplay="showVideo()">
+    <video id="background-video" autoplay muted loop preload="auto">
         <source src="A.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la balise vidéo.
     </video>
@@ -295,7 +280,7 @@ function verifierPairImpair() {
                 <td>10. Calculer la factorielle d'un nombre</td>
                 <td>
                     <input type="number" id="factorielle" placeholder="Entrez un nombre">
-                    <button onclick="calculerFactorielle()">Calculer la factorielle</button>
+                    <button onclick="calculerFactorielle()">Calculer</button>
                     <button onclick="afficherCode('code10')">Afficher le code</button>
                     <div id="code10" class="code-box">
                         <pre>
@@ -429,10 +414,10 @@ function verifierPalindrome() {
         }
 
         // Fonction pour afficher la vidéo après qu'elle soit prête
-        function showVideo() {
+        document.addEventListener('DOMContentLoaded', function() {
             const video = document.getElementById('background-video');
             video.classList.add('video-visible');
-        }
+        });
     </script>
 </body>
 </html>
