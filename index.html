@@ -52,13 +52,13 @@
         .navbar {
             display: flex;
             justify-content: center;
-            background-color: #fff; /* Fond du menu principal blanc */
+            background-color: #fff;
             box-shadow: 0px 2px 4px rgb(0, 0, 0);
             padding: 10px 0;
         }
 
         .navbar a {
-            color: #000; /* Texte noir */
+            color: #000;
             text-decoration: none;
             padding: 10px 20px;
             font-size: 16px;
@@ -68,8 +68,8 @@
         }
 
         .navbar a:hover {
-            background-color: #000; /* Fond noir au survol */
-            color: #fff; /* Texte blanc au survol */
+            background-color: #000;
+            color: #fff;
         }
 
         .dropdown {
@@ -81,16 +81,16 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #fff; /* Fond blanc pour le sous-menu */
+            background-color: #fff;
             min-width: 200px;
-            border: 1px solid #000; /* Bordure noire autour du sous-menu */
+            border: 1px solid #000;
             border-radius: 4px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
 
         .dropdown-content a {
-            color: #000; /* Texte noir pour les liens du sous-menu */
+            color: #000;
             padding: 10px 20px;
             text-decoration: none;
             display: block;
@@ -98,8 +98,8 @@
         }
 
         .dropdown-content a:hover {
-            background-color: #000; /* Fond noir au survol du sous-menu */
-            color: #fff; /* Texte blanc au survol du sous-menu */
+            background-color: #000;
+            color: #fff;
         }
 
         .dropdown:hover .dropdown-content {
@@ -107,7 +107,7 @@
         }
 
         .content {
-            flex: 1; /* Remplit l'espace disponible */
+            flex: 1;
             padding: 40px;
             text-align: center;
             font-size: 18px;
@@ -122,13 +122,63 @@
             margin-bottom: 20px;
         }
 
-        .footer {
+        .skills-container {
+            text-align: center;
+            padding: 50px 0;
+            margin-top: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        .skills-header {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            animation: moveIcons 10s linear infinite;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: #000;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            font-size: 1rem;
+            margin: 0;
             color: #fff;
-            font-size: 14px;
-            border-top: 1px solid #ddd;
+        }
+
+        @keyframes moveIcons {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(200px);
+            }
+            100% {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -143,6 +193,7 @@
     <div class="header">PORTFOLIO DE KANIKATHIR</div>
 
     <div class="navbar">
+        <!-- Menu HTML et CSS -->
         <div class="dropdown">
             <a href="#" class="dropbtn">HTML et CSS</a>
             <div class="dropdown-content">
@@ -154,6 +205,7 @@
             </div>
         </div>
 
+        <!-- Menu JavaScript -->
         <div class="dropdown">
             <a href="#" class="dropbtn">JavaScript</a>
             <div class="dropdown-content">
@@ -164,6 +216,7 @@
             </div>
         </div>
 
+        <!-- Menu PHP -->
         <div class="dropdown">
             <a href="#" class="dropbtn">PHP</a>
             <div class="dropdown-content">
@@ -173,6 +226,7 @@
             </div>
         </div>
 
+        <!-- Menu Certifications -->
         <div class="dropdown">
             <a href="#" class="dropbtn">Certifications</a>
             <div class="dropdown-content">
@@ -188,6 +242,7 @@
             </div>
         </div>
 
+        <!-- Menu Missions -->
         <div class="dropdown">
             <a href="#" class="dropbtn">Missions</a>
             <div class="dropdown-content">
@@ -200,14 +255,45 @@
                 <a href="AP1/MISSION 8/index.html">Mission 8</a>
             </div>
         </div>
+
+        <!-- Menu BTS SIO -->
+        <div class="dropdown">
+            <a href="BTS SIO/index.html" class="dropbtn">BTS SIO</a>
+            <div class="dropdown-content">
+                <!-- Ajoutez ici les liens spécifiques à BTS SIO si nécessaire -->
+            </div>
+        </div>
     </div>
 
     <div class="content">
         <p>Bienvenue sur mon portfolio !</p>
     </div>
 
-    <div class="footer">
-        &copy; 2024 Kanikathir - Tous droits réservés.
+    <div class="skills-container">
+        <div class="skills-header">
+            <!-- Ajoutez un titre pour les compétences si nécessaire -->
+        </div>
+        <div class="skills">
+            <div class="skill">
+                <img src="CSS.png" alt="CSS">
+            </div>
+            <div class="skill">
+                <img src="OIP.jpg" alt="HTML5">
+            </div>
+            <div class="skill">
+                <img src="PYTHON.png" alt="Python">
+            </div>
+            <div class="skill">
+                <img src="JS.png" alt="JavaScript">
+            </div>
+            <div class="skill">
+                <img src="PHP.jpg" alt="PHP">
+            </div>
+            <div class="skill">
+                <img src="certificate-icon-symbol-sign-vector.jpg" alt="Certificat">
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
