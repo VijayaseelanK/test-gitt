@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS SIO - Portfolio</title>
+    <style>
+        /* Réinitialisation des styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Styles généraux des sections */
+        .content-section {
+            position: relative;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            color: white;
+            text-shadow: 0 0 5px #888, 0 0 10px #888; /* Effet 3D sur le texte */
+            height: 450px; /* Hauteur des sections */
+            overflow: hidden; /* Évite les débordements de la vidéo */
+        }
+
+        /* Style pour les vidéos en arrière-plan */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* La vidéo remplit la section sans déformation */
+            z-index: -1; /* Assure que la vidéo reste derrière le contenu */
+        }
+
+        /* Bannière */
+        .banner {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.6); /* Arrière-plan semi-transparent */
+            border: 2px solid rgb(255, 0, 0); /* Bordure néon rouge */
+            box-shadow: 0 0 15px rgb(255, 0, 0); /* Effet néon rouge */
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff; /* Effet lumineux */
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+        }
+
+        /* Titre des sections */
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 0 5px #888, 0 0 10px #888;
+        }
+
+        /* Options BTS SIO */
+        .options-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .option-box {
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid rgb(0, 0, 255); /* Bordure néon bleu */
+            box-shadow: 0 0 15px rgb(0, 0, 255); /* Effet néon bleu */
+        }
+
+        .option-box h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .option-box p {
+            font-size: 1em;
+        }
+
+        /* Section Lycée Parc de Vilgenis */
+        .saint-michel {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Arrière-plan semi-transparent */
+            border-radius: 8px;
+            border: 2px solid rgb(255, 255, 0); /* Bordure néon jaune */
+            box-shadow: 0 0 15px rgb(255, 255, 0); /* Effet néon jaune */
+        }
+
+        .saint-michel h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .saint-michel p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .saint-michel iframe {
+            border: 0;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .saint-michel img {
+            margin-top: 20px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section Bannière avec une vidéo en arrière-plan -->
+    <div class="banner">
+        <video autoplay muted loop class="video-background">
+            <source src="../FD.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h1>Présentation du BTS SIO</h1>
+        <p>Vous y retrouverez l'ensemble des informations concernant le BTS SIO option SLAM & SISR.</p>
+    </div>
+
+    <!-- Section Présentation du BTS SIO -->
+    <div class="content-section">
+        <video autoplay muted loop class="video-background">
+            <source src="../ER.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h2 class="section-title">Présentation Globale</h2>
+        <p>
+            Le BTS Services Informatiques aux Organisations est un diplôme reconnu par l'État de niveau BAC+2. Il remplace depuis septembre 2011, l'ancien BTS IG (Informatique de gestion). Cette nouvelle formule répond aux attentes de la profession en matière de qualification. Le programme propose deux spécialités bien distinctes : le BTS SIO Option <strong>SISR</strong> et Option <strong>SLAM</strong>.
+        </p>
+    </div>
+
+    <!-- Section Options du BTS SIO -->
+    <div class="content-section">
+        <video autoplay muted loop class="video-background">
+            <source src="../CUBE.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h2 class="section-title">Les Options du BTS SIO</h2>
+        <div class="options-container">
+            <div class="option-box">
+                <h3>Option A : SISR - Solutions d'Infrastructures Systèmes et Réseaux</h3>
+                <p>
+                    La spécialisation SISR permet d'apprendre à installer, configurer et gérer les équipements et réseaux informatiques, avec un accent sur la cybersécurité et l'administration des systèmes.
+                </p>
+            </div>
+
+            <div class="option-box">
+                <h3>Option B : SLAM - Solutions Logicielles et Applications Métiers</h3>
+                <p>
+                    La spécialisation SLAM est orientée vers le développement. Elle permet de réaliser des logiciels, des sites web, des applications mobiles, tout en assurant la rédaction des documentations et la formation des utilisateurs.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Lycée Parc de Vilgenis -->
+    <div class="content-section">
+        <video autoplay muted loop class="video-background">
+            <source src="../DD.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <div class="saint-michel">
+            <h2>Lycée Parc de Vilgenis</h2>
+            <p>
+                Situé à Massy, le Lycée Parc de Vilgenis accueille les étudiants du BTS SIO et offre un cadre idéal pour se former aux technologies informatiques modernes.
+            </p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10526.609105024429!2d2.2526043!3d48.7312356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e677a226d26443%3A0x169ed3e42bc6b239!2sLyc%C3%A9e%20Parc%20de%20Vilgenis!5e0!3m2!1sfr!2sfr!4v1726605722889!5m2!1sfr!2sfr" 
+                width="300" 
+                height="500" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <img src="../AP1/Mission 2/Logo_Vilgenis.png" alt="Logo VILGENIS">
+        </div>
+    </div>
+</body>
+</html>
+
