@@ -52,8 +52,9 @@
         .navbar {
             display: flex;
             justify-content: center;
+            align-items: center;
             background-color: #fff;
-            box-shadow: 0px 2px 4px rgb(0, 0, 0);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             padding: 10px 0;
         }
 
@@ -118,10 +119,6 @@
             border-radius: 8px;
         }
 
-        .content p {
-            margin-bottom: 20px;
-        }
-
         .skills-container {
             text-align: center;
             padding: 50px 0;
@@ -169,6 +166,16 @@
             color: #fff;
         }
 
+        .user-icon {
+            margin-left: 20px;
+        }
+
+        .user-icon img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
         @keyframes moveIcons {
             0% {
                 transform: translateX(0);
@@ -210,8 +217,8 @@
             <a href="#" class="dropbtn">JavaScript</a>
             <div class="dropdown-content">
                 <a href="TP_JS2/index.html">TP1</a>
-                <a href="TP_JS2/index.html">TP2</a>
-                <a href="">TP3</a>
+                <a href="TP_JS_non noté/index.html">TP2</a>
+                <a href="#">TP3</a>
                 <a href="TP_JS4/">TP4</a>
             </div>
         </div>
@@ -233,10 +240,6 @@
                 <a href="CERTFICATION/3.pdf">Certification 1</a>
                 <a href="CERTFICATION/4.pdf">Certification 2</a>
                 <a href="CERTFICATION/5.pdf">Certification 3</a>
-                <a href="CERTFICATION/Attestation_de_suivi.pdf">Certification 4</a>
-                <a href="CERTFICATION/ATTT.pdf">Certification 5</a>
-                <a href="CERTFICATION/Certificat_.pdf">Certification 6</a>
-                <a href="CERTFICATION/M46szEC7TdXk36rTaED9MCerkmtEESQFPXkI6CTPXo3Kc8pQSallHPhrTVcu_164020_15112024.pdf">Certification 7</a>
             </div>
         </div>
 
@@ -247,20 +250,18 @@
                 <a href="AP1/Mission 1/Présentationsdesmétiers.html">Mission 1</a>
                 <a href="AP1/Mission 2/nav.html">Mission 2</a>
                 <a href="AP1/Mission 3/Mission3.html">Mission 3</a>
-                <a href="AP1/Mission 4/cv2.html">Mission 4</a>
-                <a href="AP1/Mission 5/index.html">Mission 5</a>
-                <a href="AP1/Mission 6/index.html">Mission 6</a>
-                <a href="AP1/MISSION 8/index.html">Mission 8</a>
             </div>
         </div>
 
         <!-- Menu BTS SIO -->
         <div class="dropdown">
             <a href="BTS SIO/index.html" class="dropbtn">BTS SIO</a>
-            <div class="dropdown-content">
-                <!-- Ajoutez ici les liens spécifiques à BTS SIO si nécessaire -->
-            </div>
         </div>
+
+        <!-- Icon User -->
+        <a href="PROFIL/index.html" class="user-icon" title="User">
+            <img src="user.jpg" alt="User Icon">
+        </a>
     </div>
 
     <div class="content">
@@ -268,9 +269,6 @@
     </div>
 
     <div class="skills-container">
-        <div class="skills-header">
-            <!-- Ajoutez un titre pour les compétences si nécessaire -->
-        </div>
         <div class="skills">
             <div class="skill">
                 <img src="CSS.png" alt="CSS">
@@ -280,19 +278,9 @@
             </div>
             <div class="skill">
                 <img src="PYTHON.png" alt="Python">
-            </div>
-            <div class="skill">
-                <img src="JS.png" alt="JavaScript">
-            </div>
-            <div class="skill">
-                <img src="PHP.jpg" alt="PHP">
-            </div>
-            <div class="skill">
-                <img src="certificate-icon-symbol-sign-vector.jpg" alt="Certificat">
+                
             </div>
         </div>
     </div>
-
 </body>
 </html>
-
