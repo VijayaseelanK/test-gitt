@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM BTS SIO</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Appliquer box-sizing globalement */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Vidéo en fond */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif; /* Ajouter une police lisible */
+      overflow: hidden; /* Désactiver le défilement global de la page */
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Assure que la vidéo couvre tout l'écran */
+      z-index: -1; /* Placer la vidéo derrière tout le contenu */
+    }
+
+    /* Style du QCM */
+    h1 {
+      text-align: center;
+      color: white;
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
+
+    #qcm-form {
+      width: 80%; /* Formulaire plus large */
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+      color: white;
+      border-radius: 15px;
+      box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); /* Légère lueur blanche */
+      overflow-y: auto; /* Permet le défilement dans le formulaire */
+      max-height: 90vh; /* Limiter la hauteur du formulaire */
+    }
+
+    /* Bordure néon autour du div de questions */
+    .question {
+      border: 2px solid #000; /* Bordure noire */
+      border-radius: 5px;
+      padding: 15px;
+      margin: 15px 0;
+      box-shadow: 0 0 5px 3px rgb(255, 255, 255); /* Effet néon noir autour */
+    }
+
+    /* Boutons */
+    .actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: 2px solid #000;
+      cursor: pointer;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #555;
+      box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vidéo en fond -->
+  <video class="video-background" autoplay loop muted>
+    <source src="FD.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+
+  <h1>QCM : BTS SIO</h1>
+  <form id="qcm-form">
+    <fieldset>
+      <legend>Questions du QCM</legend>
+
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. Quelle est la couche du modèle OSI responsable du routage des paquets ?</p>
+        <label><input type="radio" name="q1" value="1"> Couche 3 - Réseau</label><br>
+        <label><input type="radio" name="q1" value="0"> Couche 2 - Liaison de données</label><br>
+        <label><input type="radio" name="q1" value="0"> Couche 4 - Transport</label>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. Quel est le rôle principal d'un pare-feu dans une architecture réseau ?</p>
+        <label><input type="radio" name="q2" value="1"> Filtrer le trafic entrant et sortant</label><br>
+        <label><input type="radio" name="q2" value="0"> Gérer les adresses IP</label><br>
+        <label><input type="radio" name="q2" value="0"> Fournir une connexion Wi-Fi</label>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <p>3. En programmation, que signifie le principe DRY (Don't Repeat Yourself) ?</p>
+        <label><input type="radio" name="q3" value="1"> Éviter de dupliquer le code</label><br>
+        <label><input type="radio" name="q3" value="0"> Réutiliser les erreurs</label><br>
+        <label><input type="radio" name="q3" value="0"> Créer plusieurs versions d'une fonction</label>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <p>4. Dans une base de données relationnelle, qu'est-ce qu'une clé primaire ?</p>
+        <label><input type="radio" name="q4" value="1"> Une colonne qui identifie de manière unique une ligne</label><br>
+        <label><input type="radio" name="q4" value="0"> Une relation entre deux tables</label><br>
+        <label><input type="radio" name="q4" value="0"> Une colonne contenant des valeurs dupliquées</label>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question">
+        <p>5. Que signifie l'acronyme HTTPS ?</p>
+        <label><input type="radio" name="q5" value="1"> HyperText Transfer Protocol Secure</label><br>
+        <label><input type="radio" name="q5" value="0"> Hyper Transfer Technical Protocol Server</label><br>
+        <label><input type="radio" name="q5" value="0"> HyperText Transfer Performance System</label>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question">
+        <p>6. En gestion de projet, que représente un diagramme de Gantt ?</p>
+        <label><input type="radio" name="q6" value="1"> Un planning des tâches du projet</label><br>
+        <label><input type="radio" name="q6" value="0"> Un budget prévisionnel</label><br>
+        <label><input type="radio" name="q6" value="0"> Une analyse des risques</label>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="question">
+        <p>7. Quelle commande Git permet de copier un dépôt distant sur votre machine locale ?</p>
+        <label><input type="radio" name="q7" value="1"> git clone</label><br>
+        <label><input type="radio" name="q7" value="0"> git push</label><br>
+        <label><input type="radio" name="q7" value="0"> git merge</label>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="question">
+        <p>8. Dans un réseau local, quel rôle joue un serveur DHCP ?</p>
+        <label><input type="radio" name="q8" value="1"> Il attribue des adresses IP dynamiques</label><br>
+        <label><input type="radio" name="q8" value="0"> Il assure la traduction des adresses IP en noms de domaine</label><br>
+        <label><input type="radio" name="q8" value="0"> Il filtre le trafic réseau</label>
+      </div>
+
+      <!-- Question 9 -->
+      <div class="question">
+        <p>9. Quelle est la différence principale entre HTTP et HTTPS ?</p>
+        <label><input type="radio" name="q9" value="1"> HTTPS chiffre les données échangées</label><br>
+        <label><input type="radio" name="q9" value="0"> HTTP est plus rapide</label><br>
+        <label><input type="radio" name="q9" value="0"> HTTPS est moins sécurisé</label>
+      </div>
+
+      <!-- Question 10 -->
+      <div class="question">
+        <p>10. Quel est l'objectif du responsive design en développement web ?</p>
+        <label><input type="radio" name="q10" value="1"> Créer des interfaces web responsives</label><br>
+        <label><input type="radio" name="q10" value="0"> Optimiser le temps de chargement des pages</label><br>
+        <label><input type="radio" name="q10" value="0"> Améliorer la sécurité des sites web</label>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="button" id="btn-correction">Correction</button>
+      <button type="button" id="btn-corrige">Afficher le Corrigé</button>
+      <button type="button" id="btn-effacer">Effacer</button>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
