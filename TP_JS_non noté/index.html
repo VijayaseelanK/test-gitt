@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture en JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Facture en JavaScript</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Article</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Résultat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" id="article1" value=""></td>
+                <td><input type="number" id="prix1" value=""></td>
+                <td><input type="number" id="quantite1" value=""></td>
+                <td><input type="text" id="resultat1" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="article2" value=""></td>
+                <td><input type="number" id="prix2" value=""></td>
+                <td><input type="number" id="quantite2" value=""></td>
+                <td><input type="text" id="resultat2" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="article3" value=""></td>
+                <td><input type="number" id="prix3" value=""></td>
+                <td><input type="number" id="quantite3" value=""></td>
+                <td><input type="text" id="resultat3" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Total</strong></td>
+                <td><input type="text" id="total" readonly></td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="calculer()">Calculer</button>
+    <button onclick="reinitialiser()">Réinitialiser</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
