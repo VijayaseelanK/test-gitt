@@ -41,8 +41,8 @@
 
         .header {
             text-align: center;
-            padding: 30px;
-            font-size: 32px;
+            padding: 20px;
+            font-size: 24px;
             font-weight: bold;
             color: #fff;
             background-color: rgba(0, 0, 0, 0.6);
@@ -51,21 +51,23 @@
 
         .navbar {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             background-color: #fff;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
+            padding: 10px;
         }
 
         .navbar a {
             color: #000;
             text-decoration: none;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 10px 15px;
+            font-size: 14px;
             font-weight: bold;
             transition: background-color 0.3s, color 0.3s;
             border-radius: 4px;
+            margin: 5px;
         }
 
         .navbar a:hover {
@@ -76,7 +78,7 @@
         .dropdown {
             position: relative;
             display: inline-block;
-            margin: 0 10px;
+            margin: 5px;
         }
 
         .dropdown-content {
@@ -92,7 +94,7 @@
 
         .dropdown-content a {
             color: #000;
-            padding: 10px 20px;
+            padding: 10px 15px;
             text-decoration: none;
             display: block;
             transition: background-color 0.3s, color 0.3s;
@@ -109,38 +111,30 @@
 
         .content {
             flex: 1;
-            padding: 40px;
+            padding: 20px;
             text-align: center;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             color: #fff;
             background-color: rgba(0, 0, 0, 0.5);
-            margin: 20px;
+            margin: 10px;
             border-radius: 8px;
         }
 
         .skills-container {
             text-align: center;
-            padding: 50px 0;
-            margin-top: auto;
+            padding: 20px;
+            margin: 10px;
             border: 2px solid #333;
             border-radius: 10px;
             background-color: transparent;
         }
 
-        .skills-header {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 40px;
-        }
-
         .skills {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 15px;
             flex-wrap: wrap;
-            animation: moveIcons 10s linear infinite;
         }
 
         .skill {
@@ -148,26 +142,27 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             background-color: #000;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            margin: 10px;
         }
 
         .skill img {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             margin-bottom: 10px;
         }
 
         .skill p {
-            font-size: 1rem;
+            font-size: 14px;
             margin: 0;
             color: #fff;
         }
 
         .user-icon {
-            margin-left: 20px;
+            margin-left: 10px;
         }
 
         .user-icon img {
@@ -176,15 +171,75 @@
             border-radius: 50%;
         }
 
-        @keyframes moveIcons {
-            0% {
-                transform: translateX(0);
+        @media (max-width: 768px) {
+            .header {
+                font-size: 20px;
+                padding: 15px;
             }
-            50% {
-                transform: translateX(200px);
+
+            .navbar a {
+                font-size: 12px;
+                padding: 8px 10px;
             }
-            100% {
-                transform: translateX(0);
+
+            .dropdown-content {
+                min-width: 150px;
+            }
+
+            .content {
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            .skills {
+                gap: 10px;
+            }
+
+            .skill {
+                padding: 10px;
+            }
+
+            .skill img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .skill p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 18px;
+                padding: 10px;
+            }
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar a {
+                font-size: 10px;
+                padding: 5px 8px;
+                margin: 2px;
+            }
+
+            .content {
+                font-size: 12px;
+            }
+
+            .skills {
+                gap: 5px;
+            }
+
+            .skill img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .skill p {
+                font-size: 10px;
             }
         }
     </style>
@@ -200,7 +255,6 @@
     <div class="header">PORTFOLIO DE KANIKATHIR</div>
 
     <div class="navbar">
-        <!-- Menu HTML et CSS -->
         <div class="dropdown">
             <a href="#" class="dropbtn">HTML et CSS</a>
             <div class="dropdown-content">
@@ -212,18 +266,16 @@
             </div>
         </div>
 
-        <!-- Menu JavaScript -->
         <div class="dropdown">
             <a href="#" class="dropbtn">JavaScript</a>
             <div class="dropdown-content">
                 <a href="TP_JS2/index.html">TP1</a>
-                <a href="TP_JS_non noté/index.html">TP2</a>
+                <a href="TP_JS_non noté/">TP2</a>
                 <a href="#">TP3</a>
                 <a href="TP_JS4/">TP4</a>
             </div>
         </div>
 
-        <!-- Menu PHP -->
         <div class="dropdown">
             <a href="#" class="dropbtn">PHP</a>
             <div class="dropdown-content">
@@ -252,7 +304,7 @@
                 <a href="AP1/Mission 1/Présentationsdesmétiers.html">Mission 1</a>
                 <a href="AP1/Mission 2/nav.html">Mission 2</a>
                 <a href="AP1/Mission 3/Mission3.html">Mission 3</a>
-                <a href="AP1/Mission 4/cv2.html">Mission 4</a>
+                <a href="AP1/Mission 4/Sommaire.html">Mission 4</a>
                 <a href="AP1/Mission 5/index.html">Mission 5</a>
                 <a href="AP1/Mission 6/index.html">Mission 6</a>
                 <a href="AP1/MISSION 8/index.html">Mission 7</a>
@@ -261,13 +313,13 @@
             </div>
         </div>
 
-        <!-- Menu BTS SIO -->
         <div class="dropdown">
             <a href="BTS SIO/index.html" class="dropbtn">BTS SIO</a>
         </div>
 
-        <!-- Icon User -->
         <a href="PROFIL/index.html" class="user-icon" title="User">
             <img src="user.jpg" alt="User Icon">
         </a>
     </div>
+</body>
+</html>
