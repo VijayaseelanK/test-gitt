@@ -7,9 +7,10 @@ body {
 }
 
 .facture-container {
-    width: 80%;
+    width: 90%; /* Réduit la largeur pour s'adapter à la page */
+    max-width: 800px; /* Assure une largeur maximale pour la facture */
     margin: 20px auto;
-    background-color: #a19f9f;
+    background-color: #fff; /* Remise à zéro de l'arrière-plan pour une facture propre */
     padding: 20px;
     box-shadow: 0 0 10px #ff038e;
 }
@@ -18,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #000;
     padding-bottom: 10px;
 }
 
@@ -37,14 +38,16 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    font-size: 12px; /* Réduit la taille des caractères pour l'impression */
 }
 
 .facture-table th, .facture-table td {
-    border: 5px solid #000000;
-    padding: 8px;
+    border: 1px solid #000; /* Réduit l'épaisseur de la bordure pour un aspect plus propre */
+    padding: 6px;
     text-align: center;
+    word-wrap: break-word; /* Permet d'ajuster le texte trop long */
 }
-s
+
 .facture-buttons {
     text-align: center;
     margin-bottom: 20px;
@@ -52,17 +55,69 @@ s
 
 .facture-buttons button {
     margin: 0 10px;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border: none;
     background-color: #f700ff;
-    color: #000000;
+    color: #000;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .facture-buttons button:hover {
-    background-color: #ffffff;
+    background-color: #000000;
+    color: #f700ff;
 }
 
 .facture-total {
     text-align: right;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.facture-total p, .facture-total h3 {
+    margin: 5px 0;
+}
+
+.facture-total span {
+    font-weight: bold;
+}
+
+/* Impression optimisée pour une page A4 */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .facture-container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    .facture-header, .facture-infos, .facture-total {
+        display: block;
+        width: 100%;
+    }
+
+    .facture-table {
+        width: 100%;
+        border: 1px solid #000;
+        font-size: 10px; /* Réduit la taille des caractères pour l'impression */
+    }
+
+    .facture-table th, .facture-table td {
+        padding: 4px;
+    }
+
+    .facture-buttons {
+        display: none; /* Cache les boutons lors de l'impression */
+    }
+
+    .facture-total {
+        font-size: 12px;
+        margin-top: 10px;
+    }
 }
