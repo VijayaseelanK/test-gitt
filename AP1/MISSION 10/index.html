@@ -16,7 +16,7 @@
             </div>
             <div class="facture-title">
                 <h2>FACTURE</h2>
-                <p>26/11/2023</p>
+                <p id="date-facture"></p>
             </div>
         </header>
 
@@ -50,9 +50,9 @@
             </thead>
             <tbody>
                 <tr class="row" id="modeleLigne">
-                    <td><input type="text" class="desc" value="desc1"></td>
-                    <td><input type="number" class="qte" value="0"></td>
-                    <td><input type="number" class="prix" value="0.00"></td>
+                    <td><input type="text" class="desc" placeholder="Description"></td>
+                    <td><input type="number" class="qte" min="0" value="0"></td>
+                    <td><input type="number" class="prix" min="0" step="0.01" value="0.00"></td>
                     <td><input type="text" class="total" readonly value="0.00"></td>
                 </tr>
                 <tr class="row lastrow" id="lastligne">
@@ -66,11 +66,15 @@
             <button id="remplir-auto">Remplir automatiquement</button>
             <button id="calculer">Calculer</button>
             <button id="annuler">Annuler</button>
+            <button id="imprimer">Imprimer la facture 🖨️</button>
         </div>
 
         <div class="facture-total">
             <p>Sous-total : <span id="sous-total">0.00</span> €</p>
-            <p>Remise : 10.00 €</p>
+            <p>
+                Remise : 
+                <input type="number" id="remise" value="10" step="1" min="0"> % 
+            </p>
             <p>Sous-total moins remises : <span id="remise-total">0.00</span> €</p>
             <p>Taux d'imposition : 10.00 %</p>
             <p>Taxe totale : <span id="taxe-total">0.00</span> €</p>
