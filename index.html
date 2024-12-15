@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Kanikathir</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> <!-- Ajout de la bibliothèque Font Awesome -->
     <style>
         * {
             margin: 0;
@@ -48,16 +49,18 @@
             background-color: rgba(0, 0, 0, 0.6);
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.4); /* Fond transparent blanc */
-    border: 2px solid #fff; /* Bordure blanche */
-    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2); /* Ombre légère */
-    padding: 10px;
-}
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 2px solid #fff;
+            box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2);
+            padding: 10px;
+        }
+
         .navbar a {
             color: #000;
             text-decoration: none;
@@ -160,14 +163,34 @@
             color: #fff;
         }
 
-        .user-icon {
+        .user-icon,
+        .game-icon {
             margin-left: 10px;
         }
 
-        .user-icon img {
+        .user-icon img,
+        .game-icon img {
             width: 32px;
             height: 32px;
             border-radius: 50%;
+        }
+
+        .game-icon {
+            font-size: 30px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .game-icon:hover {
+            background-color: #444;
+        }
+
+        .icons-container {
+            display: flex;
+            align-items: center;
         }
 
         @media (max-width: 768px) {
@@ -298,26 +321,17 @@
         </div>
 
         <div class="dropdown">
-            <a href="#" class="dropbtn">Missions</a>
-            <div class="dropdown-content">
-                <a href="AP1/Mission 1/Présentationsdesmétiers.html">Mission 1</a>
-                <a href="AP1/Mission 2/nav.html">Mission 2</a>
-                <a href="AP1/Mission 3/Mission3.html">Mission 3</a>
-                <a href="AP1/Mission 4/Sommaire.html">Mission 4</a>
-                <a href="AP1/Mission 5/index.html">Mission 5</a>
-                <a href="AP1/Mission 6/index.html">Mission 6</a>
-                <a href="AP1/MISSION 8/index.html">Mission 7</a>
-                <a href="AP1/MISSION 9/index.html">Mission 9</a>
-                <a href="AP1/MISSION 10/index.html">Mission 10</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
             <a href="BTS SIO/index.html" class="dropbtn">BTS SIO</a>
         </div>
 
-        <a href="PROFIL/index.html" class="user-icon" title="User">
-            <img src="user.jpg" alt="User Icon">
-        </a>
+        <div class="icons-container">
+            <a href="PROFIL/index.html" class="user-icon" title="User">
+                <img src="user.jpg" alt="User Icon">
+            </a>
+            <a href="MORPHION/index.html" class="game-icon" title="game-icon">
+                <img src="pk.jpg" alt="Game Icon">
+            </a>
+        </div>
     </div>
 </body>
+</html>
