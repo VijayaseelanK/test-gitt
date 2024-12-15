@@ -1,3 +1,6 @@
+// Affichage de la date actuelle
+document.getElementById("date-facture").textContent = new Date().toLocaleDateString("fr-FR");
+
 // Ajouter une ligne
 document.getElementById("ajouter-ligne").addEventListener("click", function () {
     const modele = document.getElementById("modeleLigne").cloneNode(true);
@@ -31,37 +34,36 @@ document.getElementById("calculer").addEventListener("click", function () {
 
     document.getElementById("sous-total").textContent = sousTotal.toFixed(2);
 
-    const remise = 10.00; // Remise fixe
-    const taxe = 0.1; // 10%
-    const expedition = 5.00;
-
-    const totalApresRemise = sousTotal - remise;
-    const totalTaxe = totalApresRemise * taxe;
-    const totalFinal = totalApresRemise + totalTaxe + expedition;
+    const remisePourcentage = parseFloat(document.getElementById("remise").value) || 0;
+    const remiseMontant = sousTotal * (remisePourcentage / 100);
+    const totalApresRemise = sousTotal - remiseMontant;
+    const taxe = totalApresRemise * 0.1; // Taxe à 10%
+    const expedition = 5.00; // Coût d'expédition fixe
+    const totalFinal = totalApresRemise + taxe + expedition;
 
     document.getElementById("remise-total").textContent = totalApresRemise.toFixed(2);
-    document.getElementById("taxe-total").textContent = totalTaxe.toFixed(2);
+    document.getElementById("taxe-total").textContent = taxe.toFixed(2);
     document.getElementById("solde-total").textContent = totalFinal.toFixed(2);
 });
 
 // Annuler et réinitialiser tout
 document.getElementById("annuler").addEventListener("click", function () {
-    // Supprimer toutes les lignes sauf la ligne modèle
     const lignes = document.querySelectorAll(".row:not(.lastrow):not(#modeleLigne)");
     lignes.forEach(ligne => ligne.remove());
 
-    // Réinitialiser la ligne modèle
     const modele = document.getElementById("modeleLigne");
     modele.querySelectorAll("input").forEach(input => {
-        if (input.type === "text" || input.type === "number") {
-            input.value = input.classList.contains("total") ? "0.00" : "";
-        }
+        input.value = input.classList.contains("total") ? "0.00" : "";
     });
 
-    // Réinitialiser les totaux
     document.getElementById("sous-total").textContent = "0.00";
     document.getElementById("remise-total").textContent = "0.00";
     document.getElementById("taxe-total").textContent = "0.00";
     document.getElementById("solde-total").textContent = "0.00";
+});
+
+// Imprimer la facture
+document.getElementById("imprimer").addEventListener("click", function () {
+    window.print();
 });
 
