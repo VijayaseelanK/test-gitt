@@ -1,13 +1,13 @@
+/ script.js
 const cells = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
 const restartButton = document.getElementById('restart');
 const statusText = document.getElementById('status');
 
-let currentPlayer = 'x';  // Le joueur X commence
+let currentPlayer = 'x';
 let gameActive = true;
-let boardState = ['', '', '', '', '', '', '', '', ''];  // Tableau pour garder l'état du jeu
+let boardState = ['', '', '', '', '', '', '', '', ''];
 
-// Vérifie s'il y a un gagnant
 const checkWinner = () => {
     const winPatterns = [
         [0, 1, 2],
@@ -37,36 +37,44 @@ const checkWinner = () => {
     return false;
 };
 
-// Gestion du clic sur une case
 const handleCellClick = (e) => {
     const index = [...cells].indexOf(e.target);
 
-    if (boardState[index] || !gameActive) return;  // Si la case est déjà occupée ou si le jeu est fini
+    if (boardState[index] || !gameActive) return;
 
     boardState[index] = currentPlayer;
-    e.target.classList.add(currentPlayer);  // Ajoute la classe (X ou O) à la cellule
+    e.target.classList.add(currentPlayer);
 
-    // Vérifie s'il y a un gagnant, sinon change de joueur
     if (!checkWinner()) {
-        currentPlayer = currentPlayer === 'x' ? 'o' : 'x';  // Change de joueur
+        currentPlayer = currentPlayer === 'x' ? 'o' : 'x';
         statusText.textContent = `Au tour du joueur ${currentPlayer.toUpperCase()}`;
     }
 };
 
-// Redémarrer le jeu
 const restartGame = () => {
     gameActive = true;
     currentPlayer = 'x';
-    boardState = ['', '', '', '', '', '', '', '', ''];  // Réinitialise l'état du jeu
+    boardState = ['', '', '', '', '', '', '', '', ''];
     cells.forEach(cell => {
-        cell.classList.remove('x', 'o');  // Retire les classes X et O des cases
+        cell.classList.remove('x', 'o');
+        cell.textContent = ''; // Clear text content
     });
     statusText.textContent = `Au tour du joueur ${currentPlayer.toUpperCase()}`;
 };
 
-// Ajout des écouteurs d'événements
-cells.forEach(cell => {
-    cell.addEventListener('click', handleCellClick);
+cells.forEach((cell, index) => {
+    cell.addEventListener('click', (e) => {
+        if (!gameActive || boardState[index]) return;
+
+        boardState[index] = currentPlayer;
+        e.target.classList.add(currentPlayer);
+        e.target.textContent = currentPlayer.toUpperCase(); // Display X or O
+
+        if (!checkWinner()) {
+            currentPlayer = currentPlayer === 'x' ? 'o' : 'x';
+            statusText.textContent = `Au tour du joueur ${currentPlayer.toUpperCase()}`;
+        }
+    });
 });
 
 restartButton.addEventListener('click', restartGame);
