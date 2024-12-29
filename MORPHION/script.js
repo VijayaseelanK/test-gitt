@@ -1,4 +1,6 @@
-/ script.js
+
+
+// script.js
 const cells = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
 const restartButton = document.getElementById('restart');
